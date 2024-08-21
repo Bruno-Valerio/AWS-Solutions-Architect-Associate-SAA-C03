@@ -2,8 +2,6 @@
 
 Este repositório contém um guia com informações importantes para ajudar você a se preparar para o exame AWS Certified Solutions Architect Associate (SAA-C03).
 
-![AWS Services MAP](/extras/aws_services_map.jpg)
-
 Este documento de dicas resume serviços, conceitos e práticas recomendadas importantes testados no exame. Ele pode ser usado como um guia de referência rápida para estudar. 
 
 As informações estão organizadas nas seguintes seções:
@@ -11,17 +9,21 @@ As informações estão organizadas nas seguintes seções:
 ### Índice
 - [Amazon Elastic Compute Cloud (EC2)](#amazon-elastic-compute-cloud-ec2)
 - [Amazon Elastic Container Service (ECS)](#amazon-elastic-container-service-ecs)
+- [Amazon Fargate](#amazon-fargate)
 - [Amazon Elastic Container Registry (ECR)](#amazon-elastic-container-registry-ecr)
 - [Amazon Elastic Kubernetes Service (EKS)](#amazon-elastic-kubernetes-service-eks)
 - [AWS Lambda](#aws-lambda)
 - [Amazon Virtual Private Cloud (VPC)](#amazon-virtual-private-cloud-vpc)
 - [Amazon Route 53](#amazon-route-53)
+- [AWS Certificate Manager (ACM)](#aws-certificate-manager-acm)
 - [Amazon Elastic Load Balancing (ELB)](#amazon-elastic-load-balancing-elb)
+- [Gateway Load Balancer (GWLB)](#gateway-load-balancer-gwlb)
 - [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 - [AWS Direct Connect](#aws-direct-connect)
 - [Amazon Simple Storage Service (S3)](#amazon-simple-storage-service-s3)
 - [Amazon Elastic Block Store (EBS)](#amazon-elastic-block-store-ebs)
 - [Amazon Elastic File System (EFS)](#amazon-elastic-file-system-efs)
+- [Amazon FSx](#amazon-fsx)
 - [Amazon Relational Database Service (RDS)](#amazon-relational-database-service-rds)
 - [Amazon Aurora](#amazon-aurora)
 - [Amazon DynamoDB](#amazon-dynamodb)
@@ -37,12 +39,14 @@ As informações estão organizadas nas seguintes seções:
 - [AWS Security Hub](#aws-security-hub)
 - [AWS CloudFormation](#aws-cloudformation)
 - [AWS Systems Manager](#aws-systems-manager)
+- [AWS Secrets Manager](#aws-secrets-manager)
 - [AWS Well-Architected Framework](#aws-well-architected-framework)
 - [AWS QuickSight](#aws-quicksight)
 - [AWS Core Services](#aws-core-services)
 - [AWS Networking and Security Services](#aws-networking-and-security-services)
 - [AWS Deployment and Management Services](#aws-deployment-and-management-services)
 - [AWS Cost Optimization Strategies](#aws-cost-optimization-strategies)
+- [AWS Cost Explorer](#aws-cost-explorer)
 - [Amazon EventBridge](#amazon-eventbridge)
 - [AWS Step Functions](#aws-step-functions)
 - [Amazon Kinesis](#amazon-kinesis)
@@ -54,6 +58,16 @@ As informações estão organizadas nas seguintes seções:
 - [AWS CodeBuild](#aws-codebuild)
 - [AWS CodeDeploy](#aws-codedeploy)
 - [AWS CodeCommit](#aws-codecommit)
+- [Amazon AppFlow](#amazon-appflow)
+- [AWS Network Firewall](#aws-network-firewall)
+- [AWS Firewall Manager](#aws-firewall-manager)
+- [AWS Config](#aws-config)
+- [AWS Trusted Advisor](#aws-trusted-advisor)
+- [VPC Gateway Endpoints](#vpc-gateway-endpoints)
+- [AWS Shield Advanced](#aws-shield-advanced)
+- [AWS Global Accelerator](#aws-global-accelerator)
+- [AWS IAM Identity Center](#aws-iam-identity-center)
+- [Systems Manager Session Manager](#systems-manager-session-manager)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -100,6 +114,29 @@ Aqui estão alguns detalhes adicionais sobre o Amazon ECS que você pode querer 
 - ECS pode ser integrado a vários outros serviços da AWS, como Amazon EC2, Amazon S3 e Amazon Route 53.
 
 ECS é uma ferramenta poderosa para gerenciar aplicativos em contêineres. É fácil de usar e oferece uma variedade de recursos para ajudá-lo a implantar, gerenciar e dimensionar seus aplicativos em contêineres com segurança e eficiência.
+
+Claro! Aqui está a seção sobre Amazon Fargate seguindo o mesmo padrão dos outros tópicos do seu guia:
+
+## Amazon Fargate
+<https://docs.aws.amazon.com/pt_br/AmazonECS/latest/userguide/what-is-fargate.html>
+
+O Amazon Fargate é um serviço de computação sem servidor que permite executar contêineres sem precisar gerenciar a infraestrutura subjacente. Ele se integra ao Amazon Elastic Container Service (ECS) e ao Amazon Elastic Kubernetes Service (EKS), permitindo que você execute e dimensione contêineres sem a necessidade de provisionar e gerenciar servidores.
+
+Aqui estão algumas informações curtas sobre o Amazon Fargate que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- Fargate é um serviço de computação sem servidor para contêineres.
+- Fargate elimina a necessidade de provisionar e gerenciar servidores ou clusters de instâncias EC2.
+- Fargate é integrado ao Amazon ECS e ao Amazon EKS, permitindo que você escolha sua plataforma de orquestração de contêineres.
+- Fargate oferece escalonamento automático, ajustando os recursos com base na demanda dos contêineres.
+- Fargate cobra pelos recursos de computação e armazenamento utilizados pelos seus contêineres, sem custos adicionais para a infraestrutura.
+
+Aqui estão alguns detalhes adicionais sobre o Amazon Fargate que você pode querer saber:
+
+- Fargate proporciona isolamento de segurança, executando cada tarefa em seu próprio kernel, oferecendo um ambiente seguro e isolado.
+- Fargate pode ser usado para executar contêineres em qualquer região suportada pela AWS.
+- Fargate facilita o desenvolvimento e a operação de contêineres ao remover a complexidade de gerenciar a infraestrutura subjacente.
+
+O Amazon Fargate é uma ferramenta poderosa para desenvolver e operar aplicativos em contêineres de maneira simplificada e escalável, sem a necessidade de gerenciar a infraestrutura subjacente.
 
 ## Amazon Elastic Container Registry (ECR)
 <https://docs.aws.amazon.com/pt_br/ecr/>
@@ -168,7 +205,7 @@ Aqui estão alguns detalhes adicionais sobre o AWS Lambda que você pode querer 
 
 Lambda é uma ferramenta poderosa para construir aplicativos serverless. É fácil de usar e fornece uma variedade de recursos para ajudar você a desenvolver, implementar e gerenciar seus aplicativos serverless de forma eficiente.
 
-## Amazon Virtual Private Cloud (VPC) 
+## Amazon Virtual Private Cloud (VPC)
 <https://docs.aws.amazon.com/pt_br/vpc/>
 
 O Amazon Virtual Private Cloud (VPC) permite que você inicie recursos da AWS em uma rede virtual logicamente isolada que você define. Essa rede virtual se assemelha muito a uma rede tradicional que você operaria em seu próprio data center, com os benefícios de usar a infraestrutura escalável da AWS.
@@ -182,12 +219,22 @@ Aqui estão algumas informações curtas sobre o Amazon VPC que você precisa sa
 
 Aqui estão alguns detalhes adicionais sobre o Amazon VPC que você pode querer saber:
 
-- Os VPCs podem ser divididos em sub-redes, que são redes menores e isoladas dentro do seu VPC.
-- Você pode configurar tabelas de rotas para controlar como o tráfego flui entre sub-redes e entre sua VPC e a internet ou outras VPCs.
-- Você pode usar gateways de rede para conectar sua VPC à internet ou a outras VPCs.
-- Você pode usar grupos de segurança para controlar o tráfego de entrada e saída de e para seus recursos de VPC.
+- **Sub-redes**: Os VPCs podem ser divididos em sub-redes, que são redes menores e isoladas dentro do seu VPC. Sub-redes podem ser configuradas como públicas ou privadas, dependendo da necessidade de conectividade com a internet.
+- **Tabelas de Roteamento**: Você pode configurar tabelas de rotas para controlar como o tráfego flui entre sub-redes, dentro do VPC, ou entre sua VPC e a internet ou outras VPCs.
+- **Gateways de Rede**: Use gateways de rede, como Internet Gateways e NAT Gateways, para conectar sua VPC à internet ou a outras redes externas.
+- **Grupos de Segurança**: Os grupos de segurança permitem controlar o tráfego de entrada e saída de e para seus recursos dentro da VPC, funcionando como firewalls virtuais.
 
-A VPC é uma ferramenta poderosa para construir e gerenciar redes seguras e isoladas na nuvem. É fácil de usar e fornece uma variedade de recursos para ajudar você a atender às suas necessidades de rede.
+### VPC Peering
+
+O **VPC Peering** é uma funcionalidade que permite a interconexão de duas VPCs, possibilitando que recursos em uma VPC se comuniquem diretamente com recursos em outra VPC. Essa comunicação ocorre de forma privada, sem a necessidade de roteamento via internet.
+
+- **Comunicação Privada**: Tráfego direto entre VPCs conectadas, sem necessidade de expor os dados à internet pública.
+- **Cenários de Uso**: Ideal para comunicação entre ambientes de produção e desenvolvimento, integração entre diferentes contas da AWS ou até mesmo entre VPCs em diferentes regiões (peering inter-regional).
+- **Configuração Simples**: O processo envolve criar e aceitar solicitações de peering e ajustar as tabelas de rotas e grupos de segurança conforme necessário.
+
+### Considerações Adicionais:
+- **VPC Peering**: Não suporta sobreposição de CIDRs e não permite roteamento transitivo (ou seja, A para B, B para C não significa que A pode acessar C).
+- **Alternativas ao VPC Peering**: Para conexões mais complexas ou envolvendo múltiplas VPCs com roteamento transitivo, considere o uso de AWS Transit Gateway.
 
 ## Amazon Route 53  
 <https://docs.aws.amazon.com/pt_br/route53/>
@@ -214,32 +261,100 @@ Aqui estão alguns detalhes adicionais sobre o Amazon Route 53 que você pode qu
 
 O Route 53 é uma ferramenta poderosa para gerenciar registros DNS e rotear tráfego para aplicativos de internet. É fácil de usar e fornece uma variedade de recursos para ajudar você a atender às suas necessidades de DNS e roteamento.
 
+## AWS Certificate Manager (ACM)
+<https://docs.aws.amazon.com/pt_br/acm/>
+
+O AWS Certificate Manager (ACM) é um serviço que facilita a criação, gerenciamento e implantação de certificados SSL/TLS para uso com serviços da AWS e seus recursos. O ACM gerencia automaticamente a renovação dos certificados que você cria, ajudando a proteger a comunicação entre os usuários e seus aplicativos na AWS sem a complexidade de gerenciar os certificados manualmente.
+
+Aqui estão algumas informações curtas sobre o AWS Certificate Manager (ACM) que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- O ACM permite criar e gerenciar certificados SSL/TLS para proteger a comunicação entre seus aplicativos e os usuários.
+- O ACM oferece certificados gratuitos para uso com serviços da AWS, como Elastic Load Balancing, Amazon CloudFront, Amazon API Gateway, e outros.
+- O ACM automatiza o processo de renovação dos certificados que ele gerencia, ajudando a garantir que seus aplicativos permaneçam seguros.
+- O ACM pode ser usado para importar certificados de terceiros para uso com seus recursos da AWS.
+
+Aqui estão alguns detalhes adicionais sobre o AWS Certificate Manager (ACM) que você pode querer saber:
+
+- Os certificados gerenciados pelo ACM podem ser usados apenas com serviços que são integrados ao ACM, como Amazon CloudFront, Elastic Load Balancing, e API Gateway.
+- O ACM oferece suporte a validação de domínio e validação de entidade (organization validation).
+- Os certificados gerenciados pelo ACM são automaticamente renovados antes de expirarem, eliminando a necessidade de renovação manual.
+- O ACM pode ser integrado com o Route 53 para validar automaticamente a propriedade de um domínio.
+
+O AWS Certificate Manager é uma ferramenta poderosa para simplificar a gestão de certificados SSL/TLS, garantindo que suas aplicações na AWS sejam seguras e que os certificados estejam sempre atualizados. É uma solução essencial para quem precisa garantir a segurança das comunicações com seus aplicativos na nuvem AWS.
+
 ## Amazon Elastic Load Balancing (ELB)
 <https://docs.aws.amazon.com/pt_br/elasticloadbalancing/>
 
 O Elastic Load Balancing (ELB) é um serviço de balanceamento de carga que distribui automaticamente o tráfego de entrada em vários destinos, como instâncias EC2, contêineres e endereços IP, em uma ou mais Zonas de Disponibilidade. Ele monitora a integridade de seus destinos registrados e garante que o tráfego seja roteado apenas para os destinos saudáveis. O ELB dimensiona a capacidade do seu balanceador de carga automaticamente em resposta a alterações no tráfego de entrada.
 
-Aqui estão algumas informações curtas sobre o Amazon ELB que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+**Aqui estão algumas informações curtas sobre o Amazon ELB que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:**
 
-- ELB é um serviço de balanceamento de carga que distribui o tráfego de entrada em vários destinos.
-- ELB monitora a integridade de seus destinos registrados e roteia o tráfego apenas para os destinos saudáveis.
-- ELB dimensiona a capacidade do seu balanceador de carga automaticamente em resposta a alterações no tráfego de entrada.
-- ELB oferece suporte a três tipos diferentes de balanceadores de carga:
-- Application Load Balancer: roteia o tráfego para aplicativos da web.
-- Network Load Balancer: roteia o tráfego para aplicativos TCP e UDP.
-- Classic Load Balancer: Um balanceador de carga legado que ainda é suportado, mas não recomendado para novos aplicativos.
+- **ELB é um serviço de balanceamento de carga** que distribui o tráfego de entrada em vários destinos para aumentar a disponibilidade e a escalabilidade de aplicações.
+- **Monitora a integridade dos destinos registrados** e roteia o tráfego apenas para os destinos saudáveis, garantindo alta disponibilidade.
+- **Dimensiona automaticamente a capacidade** do balanceador de carga em resposta a alterações no tráfego de entrada, sem intervenção manual.
+- **Suporta três tipos de balanceadores de carga:**
+  - **Application Load Balancer (ALB):** Projetado para roteamento avançado de solicitações de aplicações web.
+  - **Network Load Balancer (NLB):** Otimizado para lidar com altas taxas de tráfego e baixa latência em protocolos de nível de transporte.
+  - **Classic Load Balancer (CLB):** Balanceador de carga legado que oferece funcionalidades básicas nas camadas de aplicação e transporte; não é recomendado para novas aplicações.
 
-Aqui estão alguns detalhes adicionais sobre o Amazon ELB que você pode querer saber:
+**Aqui estão alguns detalhes adicionais sobre o Amazon ELB que você pode querer saber:**
 
-- ELB pode ser usado para balancear a carga do tráfego para aplicativos hospedados na AWS, no local ou com outros provedores de nuvem.
-- ELB pode ser integrado a uma variedade de outros serviços da AWS, como Amazon EC2, Amazon S3 e Amazon CloudFront.
-- ELB fornece uma variedade de recursos para ajudar você a gerenciar seus balanceadores de carga, incluindo:
-- Health checks: Monitora a integridade dos seus destinos registrados e roteia o tráfego apenas para os destinos saudáveis.
-- Listener rules: Roteia o tráfego para diferentes destinos com base na solicitação.
-- Target groups: Grupos de destinos que você pode registrar com seu balanceador de carga.
-- Security groups: Controla o tráfego de entrada e saída de e para seu balanceador de carga.
+- **Application Load Balancer (ALB):**
+  - Opera na **Camada 7 (Aplicação)** do modelo OSI, ideal para tráfego HTTP e HTTPS.
+  - **Suporta roteamento avançado** baseado em parâmetros como URL, host, cabeçalhos e métodos HTTP, facilitando a distribuição de tráfego para microserviços e arquiteturas baseadas em contêineres.
+  - **Integra-se com serviços como AWS ECS e EKS**, facilitando o balanceamento de carga em aplicações conteinerizadas.
+  - **Suporta protocolos WebSocket e HTTP/2**, permitindo comunicação em tempo real e eficiente entre clientes e servidores.
+  - **Oferece recursos de autenticação e autorização integrados**, permitindo controle de acesso centralizado antes que o tráfego alcance suas aplicações.
 
-O Elastic Load Balancing é uma ferramenta poderosa para distribuir o tráfego de entrada em vários destinos e garantir que seus aplicativos sejam altamente disponíveis e escaláveis. É fácil de usar e oferece uma variedade de recursos para ajudar você a atender às suas necessidades de balanceamento de carga.
+- **Network Load Balancer (NLB):**
+  - Opera na **Camada 4 (Transporte)** do modelo OSI, sendo adequado para tráfego TCP, UDP e TLS.
+  - **Projetado para alta performance e baixa latência**, capaz de lidar com milhões de solicitações por segundo, mantendo uma latência ultra baixa.
+  - **Fornece endereços IP estáticos** para o balanceador de carga, facilitando a integração com sistemas que requerem IPs fixos.
+  - **Preserva o endereço IP de origem do cliente**, permitindo que os servidores de destino identifiquem o cliente diretamente.
+  - **Suporta zonal failover**, garantindo alta disponibilidade mesmo em casos de falhas em zonas de disponibilidade específicas.
+
+- **Classic Load Balancer (CLB):**
+  - Opera nas **Camadas 4 e 7** do modelo OSI, oferecendo funcionalidades básicas de balanceamento de carga.
+  - **Adequado para aplicações legadas** que foram construídas dentro do ecossistema AWS antes da introdução do ALB e NLB.
+  - **Oferece recursos limitados** em comparação com ALB e NLB, sem suporte a muitos dos recursos avançados disponíveis nos balanceadores mais modernos.
+  - **Não é recomendado para novas aplicações**, sendo preferível utilizar ALB ou NLB conforme os requisitos específicos da aplicação.
+
+- **Integração com outros serviços AWS:**
+  - O ELB pode ser **usado para balancear a carga de tráfego** para aplicativos hospedados na AWS, em ambientes on-premises ou em outras nuvens.
+  - **Integra-se facilmente com serviços como Amazon EC2, ECS, EKS, Auto Scaling e CloudFront**, proporcionando uma arquitetura flexível e escalável.
+
+- **Recursos adicionais do ELB:**
+  - **Health Checks:** Monitoram continuamente a saúde dos destinos registrados e direcionam o tráfego apenas para destinos operacionais.
+  - **Listener Rules:** Definem como o ELB roteia o tráfego de entrada com base nas solicitações recebidas.
+  - **Target Groups:** Agrupam destinos semelhantes para facilitar o roteamento e a escalabilidade das aplicações.
+  - **Security Groups e ACLs de Rede:** Controlam o acesso de entrada e saída, aprimorando a segurança das aplicações.
+
+O Amazon Elastic Load Balancing é uma **ferramenta essencial para construir aplicações altamente disponíveis, escaláveis e resilientes** na AWS. **A escolha entre ALB, NLB e CLB deve ser baseada nos requisitos específicos** de sua aplicação, como protocolos suportados, necessidade de roteamento avançado, performance e compatibilidade com sistemas existentes.
+
+## Gateway Load Balancer (GWLB)
+<https://docs.aws.amazon.com/pt_br/elasticloadbalancing/latest/gateway/introduction.html>
+
+O **Gateway Load Balancer (GWLB)** é um serviço da AWS que simplifica a implantação, escalabilidade e gerenciamento de appliances de rede de terceiros, como firewalls e sistemas de detecção/prevenção de intrusões, na nuvem. Ele combina o balanceamento de carga com a escalabilidade elástica, permitindo que você insira esses dispositivos de segurança na rota do tráfego de rede de maneira transparente.
+
+Aqui estão algumas informações curtas sobre o Gateway Load Balancer que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- **Balanceamento de Carga Transparente:** O GWLB distribui automaticamente o tráfego de rede entre várias instâncias de appliances de segurança, garantindo a distribuição eficiente das cargas de trabalho.
+
+- **Encapsulamento GENEVE:** O GWLB utiliza o protocolo GENEVE para encapsular o tráfego antes de enviá-lo para as instâncias de appliances, permitindo que o tráfego retorne ao destino original após a inspeção, mantendo a transparência na rede.
+
+- **Escalabilidade e Alta Disponibilidade:** O GWLB escala automaticamente para lidar com variações no tráfego, assegurando que seus appliances de segurança possam gerenciar altas cargas de trabalho e garantindo alta disponibilidade através da distribuição do tráfego entre múltiplas zonas de disponibilidade (AZs).
+
+- **Integração com Serviços AWS:** O GWLB se integra a outros serviços da AWS, como VPC e Transit Gateway, facilitando a criação de arquiteturas de rede complexas com dispositivos de segurança centralizados.
+
+- **Endpoints de GWLB:** Para direcionar o tráfego ao GWLB, você pode criar Endpoints de Gateway Load Balancer nas VPCs onde seus aplicativos estão executando. Esses endpoints atuam como pontos de entrada que encaminham o tráfego para os appliances de segurança.
+
+Aqui estão alguns detalhes adicionais sobre o Gateway Load Balancer que você pode querer saber:
+
+- **Inspeção de Tráfego:** Ideal para cenários em que você precisa de inspeção profunda de pacotes ou aplicação de políticas de segurança específicas no tráfego de rede.
+- **Appliances de Segurança:** Facilita a inserção de firewalls, sistemas de prevenção/detecção de intrusão ou outros appliances de rede no fluxo de tráfego de seus aplicativos.
+- **Simplificação Operacional:** Reduz a complexidade de gerenciar e escalar appliances de segurança na nuvem, permitindo que o GWLB cuide da distribuição e escalabilidade desses dispositivos.
+
+O Gateway Load Balancer é uma solução poderosa para integrar e gerenciar appliances de segurança de rede em escala na AWS, garantindo a conformidade com requisitos de segurança sem comprometer a simplicidade operacional e a escalabilidade da infraestrutura.
 
 ## AWS Transfer for SFTP
 <https://docs.aws.amazon.com/pt_br/transfer/>
@@ -312,8 +427,61 @@ Aqui estão alguns detalhes adicionais sobre o Amazon S3 que você pode querer s
 - Os objetos do S3 podem ter até 5 TB de tamanho.
 - O S3 oferece uma variedade de classes de armazenamento para atender às suas necessidades, incluindo Standard, Standard-IA, Glacier e Glacier Deep Archive.
 - S3 pode ser integrado a uma variedade de outros serviços da AWS, como Amazon EC2, Amazon CloudFront e Amazon Lambda.
+- S3 Transfer Acceleration: É um recurso específico para o Amazon S3 que acelera o upload de objetos para um bucket do S3.
+- S3 File Gateway é uma solução poderosa para organizações que procuram integrar de forma eficiente o armazenamento em nuvem com suas operações locais, permitindo uma transição tranquila para a utilização da nuvem com uma interface de arquivos familiar.
 
 O Amazon S3 é uma ferramenta poderosa para armazenar e recuperar qualquer quantidade de dados. É fácil de usar e fornece uma variedade de recursos para ajudar você a gerenciar seus dados de forma segura, confiável e eficiente.
+
+*** S3 Standard: ***
+
+- Quando usar: Ideal para dados acessados com frequência, como sites dinâmicos, aplicações móveis, e conteúdos que precisam de baixa latência e alta disponibilidade.
+- Características: Alta durabilidade e disponibilidade, sem taxas de recuperação.
+- Durabilidade: 99.999999999% (11 9's).
+- Disponibilidade: 99.99%.
+- Latência: Milissegundos.
+- Custo: Mais alto; sem taxa de recuperação.
+
+*** S3 Intelligent-Tiering: ***
+
+- Quando usar: Use para dados com padrões de acesso desconhecidos ou variáveis. O S3 Intelligent-Tiering move automaticamente os dados entre camadas de custo mais baixo, sem impacto na performance.
+- Características: Otimiza custos sem sacrificar a performance.
+- Durabilidade: 99.999999999% (11 9's).
+- Disponibilidade: 99.9%.
+- Automação: Move dados automaticamente entre camadas para otimizar custos.
+
+*** S3 Standard-IA (Infrequent Access): ***
+
+- Quando usar: Ideal para dados raramente acessados, mas que precisam estar disponíveis rapidamente quando necessários, como backups ou arquivos menos utilizados.
+- Características: Menor custo de armazenamento com uma pequena taxa de recuperação.
+- Durabilidade: 99.999999999% (11 9's).
+- Disponibilidade: 99.9%.
+- Custo: Mais baixo que Standard; taxa de recuperação aplicada.
+
+*** S3 One Zone-IA: ***
+
+- Quando usar: Use para dados raramente acessados que podem ser facilmente recriados, e que não precisam da redundância multi-AZ (zona de disponibilidade).
+- Características: Menor custo, mas com menos resiliência em caso de falha de zona.
+- Durabilidade: 99.999999999% (11 9's) dentro de uma única AZ.
+- Disponibilidade: 99.5%.
+- Custo: Menor que Standard-IA; taxa de recuperação aplicada.
+
+*** S3 Glacier: ***
+
+- Quando usar: Perfeito para arquivamento de longo prazo de dados que são raramente acessados e que podem esperar minutos ou horas para serem recuperados.
+- Características: Custo muito baixo, ideal para dados que precisam ser armazenados por longos períodos.
+- Durabilidade: 99.999999999% (11 9's).
+- Latência: Minutos a horas para recuperação.
+- Custo: Muito baixo; taxa de recuperação aplicada.
+
+*** S3 Glacier Deep Archive: ***
+
+- Quando usar: Use para arquivamento de dados que praticamente nunca precisam ser acessados, mas que devem ser mantidos por muitos anos (como registros regulatórios).
+- Características: O menor custo de todas as classes, com tempo de recuperação em horas.
+- Durabilidade: 99.999999999% (11 9's).
+- Latência: Horas para recuperação.
+- Custo: O mais baixo entre todas as classes S3; taxa de recuperação aplicada.
+
+Essas classes permitem que você otimize o armazenamento de acordo com os padrões de acesso e os requisitos de custo, mantendo a segurança e a durabilidade dos seus dados.
 
 ## Amazon Elastic Block Store (EBS)
 <https://docs.aws.amazon.com/pt_br/ebs/>
@@ -364,6 +532,34 @@ Aqui estão alguns detalhes adicionais sobre o EFS que você pode querer saber:
 - Os sistemas de arquivos EFS podem ser criptografados usando o AWS Key Management Service (KMS).
 - Os sistemas de arquivos EFS podem ser usados ​​para criar matrizes RAID.
 - Os sistemas de arquivos EFS podem ser usados ​​para criar volumes de inicialização para instâncias EC2.
+
+## Amazon FSx
+<https://docs.aws.amazon.com/pt_br/fsx/>
+
+O Amazon FSx é um serviço de armazenamento de arquivos gerenciado que oferece sistemas de arquivos otimizados para uma variedade de workloads, desde aplicações corporativas tradicionais até aplicativos de machine learning e HPC (computação de alta performance). O FSx oferece várias opções de sistemas de arquivos, incluindo Amazon FSx for Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, e Amazon FSx for OpenZFS, cada um projetado para casos de uso específicos.
+
+**Aqui estão algumas informações curtas sobre o Amazon FSx que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:**
+
+- **Amazon FSx for Windows File Server**: Proporciona um sistema de arquivos compatível com o Windows nativo, oferecendo suporte total a recursos do Windows como Active Directory (AD), Distributed File System (DFS) e cotas de arquivos.
+- **Amazon FSx for Lustre**: Oferece um sistema de arquivos de alto desempenho otimizado para cargas de trabalho de HPC, machine learning, análise de big data, e outras aplicações que requerem alto throughput e baixa latência.
+- **Amazon FSx for NetApp ONTAP**: Combina a popularidade e os recursos avançados do NetApp ONTAP com a simplicidade e a flexibilidade da nuvem AWS, proporcionando armazenamento de arquivos para cargas de trabalho corporativas complexas.
+- **Amazon FSx for OpenZFS**: Fornece um sistema de arquivos escalável e de alto desempenho baseado em OpenZFS, ideal para casos de uso que exigem resiliência de dados e fácil integração com outros sistemas baseados em ZFS.
+
+**Aqui estão alguns detalhes adicionais sobre o Amazon FSx que você pode querer saber:**
+
+- **Alto desempenho e baixa latência**: Cada sistema de arquivos do FSx é otimizado para oferecer alta performance, com suporte a milhões de IOPS e throughput elevado, dependendo da opção de FSx escolhida.
+- **Totalmente gerenciado**: O Amazon FSx elimina a necessidade de configuração, provisionamento e manutenção de hardware e software, oferecendo uma solução de armazenamento escalável e segura.
+- **Escalabilidade e Flexibilidade**: O FSx pode ser dimensionado para atender a cargas de trabalho variáveis, com opções de dimensionamento automático e flexibilidade na escolha de capacidade e performance.
+- **Segurança**: O FSx integra-se com AWS Identity and Access Management (IAM) e Amazon Virtual Private Cloud (VPC), além de suportar criptografia de dados em trânsito e em repouso.
+
+**Aqui estão alguns exemplos de casos de uso do Amazon FSx:**
+
+- **FSx for Windows File Server**: Ideal para empresas que precisam migrar seus sistemas de arquivos Windows para a nuvem, mantendo compatibilidade total com aplicações baseadas em Windows.
+- **FSx for Lustre**: Perfeito para cargas de trabalho de machine learning, processamento de big data, e outras aplicações que exigem alta capacidade de leitura e escrita de dados.
+- **FSx for NetApp ONTAP**: Útil para organizações que já utilizam NetApp ONTAP em ambientes on-premises e desejam estender ou migrar essas cargas de trabalho para a nuvem.
+- **FSx for OpenZFS**: Adequado para desenvolvedores e administradores de sistemas que precisam de um sistema de arquivos confiável e fácil de gerenciar, especialmente para ambientes Unix/Linux.
+
+O Amazon FSx é uma ferramenta poderosa que fornece armazenamento de arquivos de alta performance e gerenciado para uma variedade de casos de uso, facilitando a migração e operação de cargas de trabalho intensivas de dados na nuvem.
 
 ## Amazon Relational Database Service (RDS)  
 <https://docs.aws.amazon.com/pt_br/rds/>
@@ -730,6 +926,7 @@ Aqui estão alguns detalhes adicionais que você pode querer saber:
 - Inventory: Fornece um inventário detalhado dos seus recursos da AWS.
 - Parameter Store: Fornece uma maneira segura de armazenar e gerenciar parâmetros para seus aplicativos e sistemas.
 - Systems Manager pode ser integrado a outros serviços da AWS, como AWS Systems Manager Incident Manager, AWS CloudFormation e AWS CodePipeline.
+- Run Command: Permite a execução remota e segura de comandos em instâncias EC2 e servidores on-premises gerenciados, facilitando a automação de tarefas operacionais sem a necessidade de acesso direto às instâncias.
 
 Exemplo de casos de uso do Systems Manager:
 
@@ -740,6 +937,39 @@ Exemplo de casos de uso do Systems Manager:
 - **Managing configuration:** O Systems Manager pode ser usado para gerenciar a configuração dos seus recursos da AWS.
 
 - **Responding to incidents:** O Systems Manager pode ser usado para responder a incidentes executando scripts automaticamente para solucionar problemas.
+
+## AWS Secrets Manager
+<https://docs.aws.amazon.com/secretsmanager/>
+
+O **AWS Secrets Manager** é um serviço da AWS que ajuda a proteger o acesso a seus aplicativos, serviços e recursos de TI sem a necessidade de codificar credenciais em texto claro. Ele permite que você armazene, distribua e gerencie segredos, como credenciais de banco de dados, chaves de API e outras informações sensíveis.
+
+### Informações principais sobre o AWS Secrets Manager:
+
+- **Armazenamento seguro:** Secrets Manager armazena segredos de maneira segura, com criptografia em repouso usando o AWS Key Management Service (KMS).
+- **Rotação automática:** Secrets Manager permite configurar a rotação automática dos segredos com o mínimo de impacto nos seus aplicativos.
+- **Gerenciamento de acesso:** Você pode gerenciar o acesso aos segredos usando políticas do AWS Identity and Access Management (IAM) para garantir que apenas usuários e serviços autorizados possam acessar os segredos.
+- **Auditoria:** Todos os acessos aos segredos são registrados no AWS CloudTrail, permitindo auditoria completa e visibilidade das atividades relacionadas aos segredos.
+
+### Benefícios do AWS Secrets Manager:
+
+- **Segurança aprimorada:** Elimina a necessidade de hardcoding de credenciais e segredos em código-fonte, reduzindo o risco de exposição acidental.
+- **Facilidade de uso:** Integra-se com outros serviços da AWS, como Amazon RDS, Amazon Redshift, e Amazon DocumentDB, facilitando a rotação automática de credenciais de banco de dados.
+- **Redução de sobrecarga operacional:** Automatiza o processo de gerenciamento e rotação de segredos, liberando sua equipe de operações para focar em outras tarefas.
+
+### Exemplo de uso:
+
+1. **Armazenamento de Credenciais:** Você pode usar o Secrets Manager para armazenar credenciais de um banco de dados Amazon RDS. O Secrets Manager permite que essas credenciais sejam recuperadas de forma programática através de uma API segura.
+
+2. **Rotação Automática:** Configure a rotação automática das credenciais armazenadas para garantir que seus segredos estejam sempre atualizados sem a necessidade de intervenção manual.
+
+3. **Gerenciamento de Acesso:** Use o IAM para controlar quem pode acessar ou gerenciar segredos no Secrets Manager, garantindo que apenas usuários e serviços autorizados tenham acesso.
+
+### Integrações:
+
+- **AWS Lambda:** Use o Secrets Manager com AWS Lambda para acessar segredos de maneira segura em suas funções Lambda.
+- **Amazon RDS:** Automatize a rotação de credenciais de banco de dados usando o Secrets Manager, garantindo que seu banco de dados esteja protegido sem precisar atualizar manualmente as credenciais em seu aplicativo.
+
+O **AWS Secrets Manager** é uma ferramenta essencial para qualquer organização que deseja garantir a segurança e a gestão eficiente de segredos e credenciais na nuvem AWS.
 
 ## AWS Well-Architected Framework
 <https://docs.aws.amazon.com/pt_br/wellarchitected/>
@@ -839,6 +1069,29 @@ As estratégias de otimização de custos da AWS ajudam você a reduzir seus cus
 - **Use AWS Cost Explorer:** para analisar, monitorar e prever seus custos.
 
 - **Monitor your costs:** A AWS fornece uma variedade de ferramentas para ajudar você a monitorar seus custos e identificar áreas onde você pode economizar dinheiro.
+
+Aqui está uma seção sobre o AWS Cost Explorer no mesmo formato dos outros tópicos:
+
+## AWS Cost Explorer
+<https://docs.aws.amazon.com/pt_br/cost-management/latest/userguide/ce-what-is.html>
+
+O AWS Cost Explorer é uma ferramenta web que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo. Ele fornece gráficos e relatórios detalhados que ajudam você a analisar tendências, identificar anomalias e tomar decisões informadas sobre a alocação de recursos e otimização de custos.
+
+Aqui estão algumas informações curtas sobre o AWS Cost Explorer que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- O Cost Explorer é uma ferramenta para visualizar e analisar seus custos e uso da AWS.
+- Ele oferece uma variedade de gráficos e relatórios personalizáveis que permitem explorar seus dados de faturamento.
+- O Cost Explorer ajuda a identificar padrões de uso, tendências e áreas onde você pode otimizar seus custos.
+- Você pode definir e monitorar orçamentos para controlar os gastos da AWS usando o Cost Explorer.
+
+Aqui estão alguns detalhes adicionais sobre o AWS Cost Explorer que você pode querer saber:
+
+- O Cost Explorer permite que você visualize seus dados de custos e uso até 12 meses atrás e projete futuros custos e uso com base nas tendências anteriores.
+- Ele oferece suporte para filtros e agrupamentos, permitindo que você veja seus custos por serviço, região, tag ou outra dimensão relevante.
+- O Cost Explorer permite a criação de relatórios personalizados para análise detalhada e acompanhamento de seus custos ao longo do tempo.
+- Ele também é integrado ao AWS Budgets, permitindo que você configure alertas quando seus custos ou uso excedem limites definidos.
+
+O AWS Cost Explorer é uma ferramenta essencial para gerenciar e otimizar seus custos na AWS, oferecendo insights detalhados e previsões que ajudam a tomar decisões financeiras informadas.
 
 ## Amazon EventBridge
 <https://docs.aws.amazon.com/pt_br/eventbridge/>
@@ -1223,3 +1476,326 @@ No geral, o AWS CodeCommit é uma ferramenta valiosa para qualquer organização
 * O CodeCommit pode ser usado para hospedar repositórios para aplicativos que são implantados em uma variedade de ambientes, incluindo ambientes locais, ambientes de nuvem e ambientes híbridos.
 
 O AWS CodeCommit é uma ferramenta poderosa e flexível para gerenciar seus repositórios Git privados. É fácil de usar e fornece uma variedade de recursos para ajudar você a proteger seu código, dimensionar seus repositórios e melhorar a colaboração de sua equipe.
+
+## Amazon AppFlow
+<https://docs.aws.amazon.com/pt_br/appflow/>
+
+O Amazon AppFlow é um serviço totalmente gerenciado que permite transferir dados de forma segura entre Software-as-a-Service (SaaS) e serviços da AWS sem a necessidade de escrever código personalizado. O AppFlow facilita a integração de dados entre aplicativos SaaS, como Salesforce, ServiceNow e Slack, e os serviços da AWS, como Amazon S3 e Amazon Redshift.
+
+### Principais características do Amazon AppFlow:
+
+- **Integração sem código:** Permite configurar fluxos de dados entre fontes SaaS e destinos na AWS usando uma interface de apontar e clicar, sem necessidade de desenvolvimento de código personalizado.
+- **Segurança integrada:** Garante que os dados sejam transferidos de forma segura, com suporte à criptografia em trânsito e em repouso.
+- **Transformação de dados:** Fornece funcionalidades de transformação de dados, como mapeamento de campos, concatenação de dados e filtragem, permitindo que os dados sejam modificados durante a transferência.
+- **Escalabilidade e confiabilidade:** Oferece escalabilidade para lidar com grandes volumes de dados e alta disponibilidade para garantir transferências confiáveis.
+
+### Casos de uso comuns do Amazon AppFlow:
+
+- **Sincronização de dados:** Sincronize dados entre sistemas SaaS e serviços da AWS, como sincronizar registros de clientes do Salesforce com o Amazon Redshift para análise.
+- **Migração de dados:** Facilite a migração de dados de aplicações SaaS para a AWS de forma rápida e segura.
+- **Automatização de processos:** Use o AppFlow para automatizar a transferência de dados entre sistemas SaaS e a AWS como parte de um fluxo de trabalho mais amplo.
+
+### Integrações Suportadas:
+
+- O AppFlow oferece suporte a uma ampla gama de integrações com serviços SaaS populares, como Salesforce, SAP, ServiceNow, Google Analytics, Zendesk, e muitos outros, além de serviços da AWS como Amazon S3, Amazon Redshift, e Amazon EventBridge.
+
+### Benefícios do Amazon AppFlow:
+
+- **Redução de complexidade:** Elimina a necessidade de desenvolver e manter soluções de integração personalizadas.
+- **Maior velocidade de implementação:** Permite configurar integrações em minutos, em vez de dias ou semanas, acelerando o tempo de disponibilização de soluções de dados.
+- **Segurança e conformidade:** Oferece recursos avançados de segurança, incluindo criptografia e conformidade com regulamentações, para proteger os dados transferidos.
+
+O Amazon AppFlow é uma ferramenta essencial para empresas que precisam integrar rapidamente dados entre várias plataformas SaaS e a AWS, garantindo segurança, escalabilidade e eficiência no processo de transferência de dados.
+
+Aqui está uma descrição sobre o **AWS Network Firewall** para complementar seu guia:
+
+## AWS Network Firewall
+<https://docs.aws.amazon.com/pt_br/network-firewall/latest/developerguide/what-is-aws-network-firewall.html>
+
+O **AWS Network Firewall** é um serviço de firewall gerenciado que facilita a implantação de controles de segurança de rede escaláveis na AWS. Ele é projetado para proteger suas VPCs (Virtual Private Clouds) ao permitir a criação de regras personalizadas que podem inspecionar, permitir ou bloquear tráfego de rede de acordo com suas necessidades específicas de segurança.
+
+### Principais Características:
+
+- **Inspeção de Tráfego:** O AWS Network Firewall realiza inspeção profunda de pacotes (DPI), permitindo a análise detalhada do tráfego de rede para identificar e bloquear ameaças antes que elas afetem seus recursos.
+
+- **Regras de Firewall Personalizáveis:** Suporte para criação de regras de firewall baseadas em estado, com capacidade para definir políticas de bloqueio ou permissão de tráfego com base em endereços IP, portas, protocolos e outros parâmetros.
+
+- **Detecção e Prevenção de Intrusões (IDS/IPS):** O AWS Network Firewall oferece funcionalidades de IDS/IPS, permitindo detectar e prevenir tentativas de intrusão e outras atividades maliciosas.
+
+- **Integração com Serviços AWS:** Integra-se nativamente com o Amazon CloudWatch para monitoramento e com o AWS Firewall Manager para gerenciamento centralizado de políticas de segurança em várias contas e regiões.
+
+- **Alta Disponibilidade e Escalabilidade:** O AWS Network Firewall é um serviço altamente disponível e escalável, projetado para suportar cargas de trabalho variáveis sem a necessidade de provisionar infraestrutura adicional manualmente.
+
+### Casos de Uso:
+
+- **Proteção de VPC:** Implementar controle de tráfego em suas VPCs, protegendo recursos críticos contra acesso não autorizado e tráfego malicioso.
+  
+- **Conformidade:** Ajudar a cumprir requisitos de conformidade, como PCI DSS, HIPAA, e outras normas que exigem o controle e monitoramento rigoroso do tráfego de rede.
+
+- **Segurança de Aplicações:** Proteger aplicações web e móveis ao inspecionar e filtrar o tráfego de entrada e saída com base em regras definidas.
+
+### Benefícios:
+
+- **Gerenciamento Simplificado:** Como um serviço gerenciado, o AWS Network Firewall reduz a complexidade operacional, eliminando a necessidade de configurar e gerenciar dispositivos de firewall físicos ou software de firewall em instâncias EC2.
+
+- **Escalabilidade Automática:** Dimensiona automaticamente os recursos de firewall para lidar com o aumento do tráfego sem intervenção manual.
+
+- **Segurança Robusta:** Oferece segurança de nível empresarial com recursos avançados de inspeção de tráfego, detecção de intrusões, e filtragem de tráfego.
+
+### Considerações:
+
+- **Custos:** O custo do AWS Network Firewall é baseado no número de gigabytes de tráfego inspecionado e no número de regras avaliadas. É importante considerar isso ao planejar seu orçamento.
+
+- **Configuração Inicial:** Pode requerer uma configuração inicial detalhada para definir todas as regras de segurança necessárias, mas depois de configurado, o serviço requer pouca manutenção contínua.
+
+## AWS Firewall Manager  
+<https://docs.aws.amazon.com/pt_br/waf/latest/developerguide/fms-chapter.html>
+
+O **AWS Firewall Manager** é um serviço de gerenciamento de segurança centralizado que permite aplicar e gerenciar políticas de firewall e outras regras de segurança em várias contas e recursos da AWS dentro de uma organização. Ele facilita a implementação de políticas de segurança em escala, garantindo que todos os recursos em todas as contas sejam protegidos de forma consistente e eficiente.
+
+**Aqui estão algumas informações curtas sobre o AWS Firewall Manager que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:**
+
+- O AWS Firewall Manager é um serviço que permite aplicar e gerenciar centralmente regras de segurança em várias contas e VPCs dentro de uma organização.
+- O Firewall Manager integra-se com o AWS Organizations para facilitar a aplicação de políticas de segurança em todas as contas da organização.
+- Ele suporta a gestão de políticas para vários serviços de segurança, como AWS WAF, AWS Shield Advanced, AWS Network Firewall, e Amazon VPC Security Groups.
+- O Firewall Manager ajuda a manter a conformidade com as políticas de segurança, fornecendo auditorias e relatórios centralizados sobre o estado de segurança.
+
+**Aqui estão alguns detalhes adicionais sobre o AWS Firewall Manager que você pode querer saber:**
+
+- **Políticas de Segurança Centralizadas:** Permite a criação e aplicação de políticas de segurança em todas as contas de uma organização, garantindo conformidade e proteção uniformes.
+- **Gerenciamento de Conformidade:** Facilita o monitoramento da conformidade com as políticas de segurança, identificando e corrigindo desvios em todas as contas AWS.
+- **Suporte Multisserviço:** Pode ser usado para gerenciar políticas de segurança relacionadas ao AWS WAF (Web Application Firewall), AWS Shield Advanced, AWS Network Firewall, e grupos de segurança do Amazon VPC.
+- **Automatização e Alertas:** Oferece automação na aplicação de políticas e alertas centralizados para violações de políticas e atividades de segurança.
+
+**Exemplo de casos de uso do AWS Firewall Manager:**
+
+- **Implementação de Políticas de Segurança Uniformes:** Usado por grandes organizações que precisam garantir que todas as suas contas e VPCs sigam políticas de segurança consistentes.
+- **Conformidade Automatizada:** Ideal para ambientes que exigem conformidade rigorosa com padrões de segurança, ajudando a garantir que todas as contas estejam em conformidade com as políticas definidas.
+- **Gestão de Riscos de Segurança:** Ajuda a mitigar riscos de segurança gerenciando centralmente as regras de firewall e respondendo rapidamente a ameaças em todas as contas.
+
+O AWS Firewall Manager é uma ferramenta essencial para organizações que precisam gerenciar segurança em escala, proporcionando controle centralizado e garantindo que todas as contas e recursos AWS estejam protegidos de acordo com as melhores práticas de segurança.
+
+## AWS Config
+<https://docs.aws.amazon.com/pt_br/config/>
+
+O **AWS Config** é um serviço totalmente gerenciado que permite avaliar, auditar e monitorar as configurações dos seus recursos da AWS. Ele oferece uma visão detalhada das configurações dos recursos da AWS em sua conta e como elas mudaram ao longo do tempo. O AWS Config pode ser usado para verificar a conformidade dos recursos com políticas internas, normas de segurança ou regulamentos.
+
+**Aqui estão algumas informações curtas sobre o AWS Config que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:**
+
+- **Monitoramento contínuo:** O AWS Config rastreia continuamente as configurações de seus recursos da AWS e as alterações nessas configurações.
+- **Avaliação de conformidade:** Você pode criar regras do AWS Config para verificar automaticamente a conformidade das configurações dos seus recursos com as políticas internas ou normativas.
+- **Histórico de configurações:** O AWS Config mantém um histórico detalhado das configurações dos recursos, permitindo que você veja como as configurações mudaram ao longo do tempo.
+- **Notificações de alterações:** O AWS Config pode ser integrado ao Amazon SNS para enviar notificações quando houver mudanças nas configurações dos recursos.
+
+**Aqui estão alguns detalhes adicionais sobre o AWS Config que você pode querer saber:**
+
+- **Regras gerenciadas e personalizadas:** O AWS Config oferece regras gerenciadas que verificam a conformidade com políticas comuns, além de permitir que você crie suas próprias regras personalizadas.
+- **Relatórios de conformidade:** O AWS Config gera relatórios de conformidade que mostram se os recursos estão em conformidade com as regras definidas.
+- **Integração com AWS CloudTrail:** O AWS Config pode ser integrado ao AWS CloudTrail para fornecer visibilidade ainda maior sobre as atividades na sua conta.
+
+## AWS Trusted Advisor
+<https://aws.amazon.com/premiumsupport/technology/trusted-advisor/>
+
+O **AWS Trusted Advisor** é um serviço que oferece recomendações em tempo real para ajudar a otimizar a segurança, a performance, a tolerância a falhas e os custos da sua infraestrutura da AWS. Ele verifica automaticamente sua conta da AWS e fornece sugestões sobre como melhorar suas práticas.
+
+**Aqui estão algumas informações curtas sobre o AWS Trusted Advisor que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:**
+
+- **Cinco categorias principais:** O Trusted Advisor oferece verificações em cinco categorias: Otimização de Custos, Performance, Segurança, Tolerância a Falhas e Limites de Serviço.
+- **Recomendações acionáveis:** Com base nas verificações, o Trusted Advisor fornece recomendações acionáveis para melhorar sua infraestrutura, como habilitar a criptografia ou ajustar a capacidade de instâncias.
+- **Alertas e relatórios:** Você pode configurar alertas para ser notificado quando o Trusted Advisor identificar áreas de risco ou oportunidades de otimização.
+
+**Aqui estão alguns detalhes adicionais sobre o AWS Trusted Advisor que você pode querer saber:**
+
+- **Verificações básicas vs. completas:** Algumas verificações do Trusted Advisor são acessíveis a todos os usuários da AWS, enquanto as verificações completas e mais detalhadas estão disponíveis para usuários com suporte Business ou Enterprise.
+- **Dashboard interativo:** O Trusted Advisor oferece um dashboard interativo onde você pode ver o status das verificações e acessar as recomendações detalhadas.
+- **Integração com AWS Organizations:** O Trusted Advisor pode ser usado para visualizar e gerenciar recomendações em várias contas dentro de uma organização da AWS.
+
+Esses tópicos oferecem uma visão geral essencial sobre os serviços AWS Config e AWS Trusted Advisor, que são fundamentais para monitorar e otimizar as operações na AWS.
+
+## VPC Gateway Endpoints
+<https://docs.aws.amazon.com/pt_br/vpc/latest/privatelink/vpc-endpoints-s3.html>
+
+Os VPC Gateway Endpoints são uma maneira eficiente e segura de acessar serviços da AWS, como Amazon S3 e DynamoDB, a partir de uma VPC sem necessidade de uma conexão à internet, gateway NAT ou instância NAT. Ao utilizar um endpoint de gateway, você evita os encargos de transferência de dados associados à saída de tráfego para a internet, o que pode resultar em economia significativa de custos.
+
+### Características Principais:
+- **Acesso Direto e Seguro:** Os endpoints de gateway permitem que o tráfego entre sua VPC e os serviços da AWS ocorra inteiramente dentro da rede da AWS, sem expor os dados à internet pública.
+- **Economia de Custos:** Reduz ou elimina encargos de transferência de dados regionais, pois o tráfego não precisa passar por gateways NAT ou conexões de internet.
+- **Configuração Simples:** Fácil de configurar através do Console de Gerenciamento da AWS, AWS CLI ou APIs.
+
+### Quando Usar:
+- **Acesso a Serviços Como Amazon S3 e DynamoDB:** Utilize endpoints de gateway quando suas instâncias EC2 ou outros recursos na VPC precisarem acessar diretamente o Amazon S3 ou DynamoDB de maneira segura e econômica.
+- **Redução de Custos:** Quando você deseja reduzir os custos associados à transferência de dados de e para serviços da AWS, eliminando a necessidade de roteamento através da internet pública.
+
+### Benefícios:
+- **Segurança:** O tráfego não precisa sair da rede da AWS, o que proporciona uma camada adicional de segurança.
+- **Disponibilidade:** Os endpoints são altamente disponíveis e escaláveis, integrados nativamente à infraestrutura da AWS.
+- **Fácil Integração:** Pode ser integrado facilmente com suas sub-redes e rotas VPC para controlar como os dados fluem dentro do seu ambiente AWS.
+
+### Configuração:
+1. **Criação do Endpoint:** Para criar um gateway endpoint, você precisa especificar o serviço da AWS ao qual deseja se conectar e selecionar as rotas na VPC que devem usar o endpoint.
+2. **Atualização da Tabela de Rotas:** Após a criação, você deve atualizar a tabela de rotas da sua VPC para direcionar o tráfego destinado ao serviço da AWS através do endpoint.
+
+Os VPC Gateway Endpoints são uma excelente opção para organizações que desejam manter o tráfego de dados privado, melhorar a segurança e reduzir os custos associados à transferência de dados em suas arquiteturas AWS.
+
+Entendido. Se você precisar de um tópico sobre **AWS Shield Advanced**, posso ajudar a criar um. **AWS Shield Advanced** é um serviço de proteção contra DDoS que oferece proteção adicional além da fornecida pelo AWS Shield Standard. Vou criar o tópico seguindo o padrão usado em outros tópicos.
+
+## AWS Shield Advanced
+<https://docs.aws.amazon.com/pt_br/waf/latest/developerguide/ddos-overview.html>
+
+**AWS Shield Advanced** é um serviço gerenciado de proteção contra ataques DDoS (Distributed Denial of Service) que oferece proteção avançada para aplicações em execução na AWS. Ele oferece detecção, mitigação e relatórios de ataques, além de monitoramento em tempo real e suporte especializado da equipe AWS.
+
+### Características principais:
+- **Proteção Contra DDoS**: Mitigação de ataques de camada de rede (camada 3/4) e de aplicação (camada 7).
+- **Detecção e Resposta Automática**: Monitora e responde automaticamente a tentativas de ataque.
+- **Monitoramento em Tempo Real**: Acesso a métricas detalhadas e alertas através do AWS CloudWatch.
+- **Assistência 24x7**: Acesso a especialistas da AWS para mitigação de ataques.
+- **Garantia Financeira**: Proteção contra custos inesperados resultantes de ataques DDoS.
+
+### Quando usar:
+- **Aplicações Críticas**: Websites, aplicativos e serviços que precisam de proteção constante contra ataques DDoS.
+- **Requisitos de Compliance**: Organizações que necessitam de conformidade com regulamentos que exigem medidas robustas contra DDoS.
+
+### Benefícios:
+- **Redução de Riscos**: Minimiza o risco de interrupções devido a ataques DDoS.
+- **Custos Previstas**: Protege contra custos adicionais associados ao escalonamento de recursos devido a um ataque DDoS.
+- **Integração Simples**: Fácil de integrar com AWS WAF, Elastic Load Balancing (ELB), Amazon CloudFront e Route 53.
+
+### Como funciona:
+- **Detecção Proativa**: Shield Advanced usa técnicas de machine learning e análise de tráfego para detectar e mitigar ataques.
+- **Análise e Mitigação**: Ativa automaticamente defesas adicionais durante ataques.
+- **Relatórios e Auditoria**: Gera relatórios detalhados de ataques para análise posterior.
+
+## AWS Global Accelerator
+<https://docs.aws.amazon.com/pt_br/global-accelerator/>
+
+O **AWS Global Accelerator** é um serviço de rede que melhora a disponibilidade e o desempenho de suas aplicações globais ao direcionar o tráfego do usuário final para os pontos de presença mais próximos da AWS. Ele utiliza a infraestrutura global da AWS para rotear tráfego de rede através dos links mais rápidos e menos congestionados, reduzindo a latência e melhorando a experiência do usuário.
+
+### Informações principais sobre o AWS Global Accelerator:
+
+- **Melhoria no Desempenho Global**: Global Accelerator usa a rede global da AWS para otimizar o caminho do tráfego da internet, diminuindo a latência e proporcionando uma experiência de usuário mais rápida e consistente.
+  
+- **Alta Disponibilidade**: O Global Accelerator distribui o tráfego entre várias regiões da AWS, proporcionando failover automático em caso de falhas, garantindo que suas aplicações permaneçam disponíveis e resilientes a desastres regionais.
+
+- **Dois Endereços IP Estáticos**: O serviço fornece dois endereços IP globais estáticos que atuam como ponto de entrada fixo para seus aplicativos, simplificando a gestão de DNS e o roteamento de tráfego.
+
+- **Balanceamento de Carga Global**: O Global Accelerator pode rotear tráfego para endpoints em várias regiões da AWS, balanceando a carga com base em políticas configuráveis, como peso ou proximidade.
+
+- **Roteamento Inteligente**: O serviço monitora constantemente o estado da rede e do aplicativo, e ajusta dinamicamente o roteamento para usar o melhor caminho disponível, minimizando interrupções de serviço.
+
+### Benefícios do AWS Global Accelerator:
+
+- **Redução de Latência**: Ao utilizar a rede global da AWS, o Global Accelerator direciona o tráfego pelos caminhos mais rápidos, o que pode resultar em uma latência significativamente menor para os usuários finais.
+
+- **Failover Automático**: Em caso de falha de um endpoint ou região, o Global Accelerator redireciona automaticamente o tráfego para outros endpoints saudáveis, garantindo a continuidade do serviço.
+
+- **Gerenciamento Simplificado**: Com dois IPs estáticos globais, é fácil gerenciar o roteamento de tráfego globalmente sem a necessidade de alterar as configurações DNS frequentemente.
+
+- **Segurança e Conformidade**: Global Accelerator oferece integração com AWS Shield e AWS WAF, proporcionando proteção adicional contra ataques DDoS e outras ameaças de segurança.
+
+### Exemplo de uso:
+
+1. **Aplicativos de Baixa Latência Global**: Empresas que oferecem serviços globais, como streaming de vídeo, jogos online ou aplicativos financeiros, podem usar o Global Accelerator para garantir que os usuários tenham uma experiência de alta qualidade, independentemente de sua localização geográfica.
+
+2. **Alta Disponibilidade Multi-regional**: Para aplicações que exigem disponibilidade contínua, o Global Accelerator pode ser configurado para rotear o tráfego para múltiplas regiões da AWS, garantindo que, se uma região enfrentar problemas, o tráfego seja automaticamente redirecionado para outra.
+
+3. **Simplificação de Roteamento**: Organizações com aplicações globais podem utilizar os IPs estáticos do Global Accelerator para simplificar o roteamento de tráfego e gestão de DNS, melhorando a eficiência operacional e reduzindo erros de configuração.
+
+### Integrações:
+
+- **AWS CloudFront**: Para entregar conteúdo com baixa latência, o Global Accelerator pode ser usado em conjunto com o Amazon CloudFront, que é uma CDN que também usa a rede global da AWS.
+  
+- **Elastic Load Balancing (ELB)**: O Global Accelerator pode distribuir tráfego entre vários ELBs em diferentes regiões, aumentando a resiliência e performance da aplicação.
+
+- **Amazon Route 53**: Pode ser usado em conjunto com o Global Accelerator para complementar estratégias de roteamento global com DNS inteligente, adaptando-se rapidamente a mudanças nas condições de rede.
+
+O **AWS Global Accelerator** é uma ferramenta poderosa para empresas que precisam garantir desempenho otimizado e alta disponibilidade em suas aplicações globais, oferecendo uma maneira eficiente de gerenciar o tráfego de rede em múltiplas regiões ao redor do mundo.
+
+## AWS IAM Identity Center
+<https://docs.aws.amazon.com/pt_br/singlesignon/latest/userguide/what-is.html>
+
+O **AWS IAM Identity Center** é a evolução do AWS Single Sign-On (AWS SSO), projetado para fornecer gerenciamento centralizado de identidades e acesso a múltiplas contas da AWS e aplicações empresariais. Esse serviço facilita a implementação de autenticação única (Single Sign-On) e simplifica a administração de permissões e acessos, garantindo que os usuários possam acessar os recursos necessários de forma segura e eficiente.
+
+### Informações principais sobre o AWS IAM Identity Center:
+
+- **Autenticação Centralizada**: AWS IAM Identity Center permite que os usuários façam login em um portal centralizado para acessar todas as suas contas da AWS e aplicações empresariais suportadas, utilizando uma única credencial. 
+
+- **Gerenciamento de Identidades e Acessos**: O serviço facilita o gerenciamento de identidades ao se integrar com o AWS Identity and Access Management (IAM) e diretórios de identidade, como o Microsoft Active Directory, permitindo uma administração centralizada e consistente.
+
+- **Integração com Aplicações Empresariais**: IAM Identity Center oferece integração nativa com uma ampla gama de aplicações empresariais SaaS (como Salesforce, Office 365, e muitos outros), permitindo que os usuários acessem essas aplicações diretamente a partir do portal.
+
+- **Provisionamento Automático de Usuários**: Suporta o provisionamento automático de usuários para as aplicações integradas, o que simplifica a gestão de acesso e garante que as permissões estejam sempre atualizadas.
+
+- **Políticas de Acesso Baseadas em Funções**: Permite a definição de permissões e políticas de acesso baseadas em funções (role-based access control), facilitando o controle de quem pode acessar quais recursos dentro das contas da AWS e aplicações empresariais.
+
+### Benefícios do AWS IAM Identity Center:
+
+- **Experiência de Usuário Unificada**: Com um único login, os usuários podem acessar múltiplas contas da AWS e aplicações empresariais, eliminando a necessidade de gerenciar várias credenciais e melhorando a eficiência operacional.
+
+- **Administração Centralizada**: Organizações podem gerenciar acessos e permissões através de um único painel, assegurando a consistência e simplificando processos de auditoria e conformidade.
+
+- **Integração com Diretórios de Identidade**: IAM Identity Center se integra facilmente com serviços de diretório existentes, como o Microsoft Active Directory, permitindo que os usuários usem suas credenciais corporativas para acessar recursos na AWS.
+
+- **Segurança Aprimorada**: Permite a implementação de políticas de acesso granular e a aplicação de princípios de privilégio mínimo, garantindo que os usuários tenham acesso apenas ao que precisam.
+
+### Exemplo de uso:
+
+1. **Gerenciamento de Acessos para Equipes Distribuídas**: Empresas que gerenciam múltiplas contas da AWS podem usar o IAM Identity Center para fornecer acesso centralizado e seguro, aplicando políticas de acesso específicas para diferentes equipes ou funções dentro da organização.
+
+2. **Integração de Aplicações SaaS**: Organizações que utilizam várias aplicações SaaS podem integrar essas aplicações ao IAM Identity Center, permitindo que os funcionários acessem todas as aplicações e contas da AWS com uma única credencial.
+
+3. **Simplificação do Provisionamento de Acesso**: Grandes organizações, onde o provisionamento de usuários e a gestão de permissões são desafiadores, podem utilizar o IAM Identity Center para automatizar esses processos, garantindo que as permissões estejam sempre atualizadas e de acordo com as políticas de segurança.
+
+### Integrações:
+
+- **AWS IAM**: O IAM Identity Center se integra com o AWS IAM para permitir o gerenciamento de permissões e políticas de acesso, proporcionando um controle detalhado sobre quem pode acessar quais recursos nas contas da AWS.
+
+- **Microsoft Active Directory**: Pode ser integrado com o Microsoft Active Directory, permitindo que os usuários utilizem suas credenciais corporativas para acessar recursos da AWS e aplicações SaaS sem necessidade de múltiplas senhas.
+
+- **Aplicações SaaS**: Integração nativa com várias aplicações SaaS, facilitando o acesso seguro e gerenciado a partir de um único ponto.
+
+O **AWS IAM Identity Center** é a solução moderna e centralizada para gerenciamento de identidade e acessos, substituindo o AWS Single Sign-On com recursos aprimorados para proporcionar uma experiência de usuário eficiente e uma administração de acessos simplificada e segura em múltiplas contas da AWS e aplicações empresariais.
+
+## Systems Manager Session Manager
+<https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html>
+
+O **AWS Systems Manager Session Manager** é um recurso do AWS Systems Manager que permite gerenciar e acessar instâncias do Amazon EC2 e outros recursos de forma segura e auditada, sem a necessidade de abrir portas de entrada (como SSH ou RDP) ou usar chaves SSH. Session Manager facilita o acesso seguro a instâncias em nuvens privadas virtuais (VPCs) e melhora a segurança operacional, eliminando a necessidade de manter, distribuir e gerenciar credenciais de acesso.
+
+### Informações principais sobre o Systems Manager Session Manager:
+
+- **Acesso Seguro e Sem Agente**: Session Manager permite que você inicie sessões de shell interativas em instâncias do EC2 sem precisar de chaves SSH, acesso a portas abertas ou infraestrutura de bastion host. O acesso é feito diretamente pelo console da AWS, AWS CLI ou SDKs.
+
+- **Auditoria e Registro Completo**: Todas as ações realizadas durante uma sessão do Session Manager são registradas no AWS CloudTrail e podem ser configuradas para serem enviadas ao Amazon S3 ou ao Amazon CloudWatch Logs, permitindo auditoria completa das atividades de administração.
+
+- **Controle de Acesso Detalhado**: Session Manager integra-se com o AWS Identity and Access Management (IAM), permitindo que você defina permissões detalhadas para quem pode iniciar sessões, acessar instâncias específicas e executar comandos.
+
+- **Sem Necessidade de Abertura de Portas**: Como o acesso é feito através do plano de controle do AWS Systems Manager, você não precisa abrir portas de entrada nas instâncias, aumentando a segurança ao minimizar a superfície de ataque.
+
+- **Funcionalidades Adicionais**: Session Manager oferece recursos como redirecionamento de portas, transferências de arquivos e suporte a plug-ins do SSM, que ampliam as capacidades de administração remota.
+
+### Benefícios do Systems Manager Session Manager:
+
+- **Segurança Aumentada**: Session Manager elimina a necessidade de usar chaves SSH ou abrir portas de rede, reduzindo o risco de ataques baseados em rede e acesso não autorizado.
+  
+- **Simplificação Operacional**: Facilita o acesso a instâncias EC2, especialmente em ambientes onde o uso de bastion hosts e chaves SSH é complicado ou indesejável.
+
+- **Auditoria e Conformidade**: Registros detalhados das atividades de administração permitem monitorar e revisar ações para conformidade e segurança, melhorando a governança.
+
+- **Controle de Acesso Granular**: A integração com o IAM permite definir quem pode acessar quais instâncias, além de especificar permissões detalhadas para comandos e sessões.
+
+### Exemplo de uso:
+
+1. **Administração de Instâncias Sem SSH**: Um administrador pode acessar e gerenciar instâncias EC2 sem precisar de chaves SSH ou abrir portas na firewall, usando apenas o console da AWS ou CLI para iniciar uma sessão no Session Manager.
+
+2. **Ambientes Altamente Seguros**: Em ambientes que exigem o mais alto nível de segurança, como sistemas financeiros ou de saúde, Session Manager pode ser utilizado para acessar instâncias EC2 sem expor portas SSH ou RDP, garantindo que as instâncias sejam isoladas e seguras.
+
+3. **Monitoramento e Auditoria**: Uma organização pode configurar o Session Manager para registrar todas as sessões e ações dos usuários no CloudWatch Logs ou no S3, facilitando auditorias e garantindo a conformidade com políticas internas ou regulatórias.
+
+### Integrações:
+
+- **AWS Identity and Access Management (IAM)**: Defina permissões detalhadas para iniciar sessões, acessar instâncias e executar comandos através do IAM.
+
+- **AWS CloudTrail**: Registra todas as atividades e ações realizadas via Session Manager para auditoria e monitoramento de segurança.
+
+- **Amazon S3 e CloudWatch Logs**: Armazene logs de sessões para análise e auditoria futura.
+
+O **AWS Systems Manager Session Manager** é uma ferramenta essencial para administradores que precisam de acesso seguro, auditável e controlado a instâncias EC2, sem a necessidade de gerenciar chaves SSH, bastion hosts ou abrir portas de rede, simplificando as operações e melhorando a segurança.
