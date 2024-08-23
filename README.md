@@ -73,6 +73,8 @@ As informações estão organizadas nas seguintes seções:
 - [AWS Glue](#aws-glue)
 - [AWS WAF](#aws-waf)
 - [Amazon MQ](#amazon-mq)
+- [AWS Network Interfaces](#aws-network-interfaces)
+- [Placement Groups](#placement-groups)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -1978,3 +1980,102 @@ O Amazon MQ é um serviço gerenciado de brokers de mensagens que facilita a con
 - **AWS IAM:** Gerencie o acesso aos brokers de mensagens utilizando políticas de segurança configuradas com o AWS IAM.
 
 O **Amazon MQ** é uma solução robusta para gerenciar brokers de mensagens na nuvem AWS, oferecendo compatibilidade com sistemas existentes, alta disponibilidade, e segurança, tornando-se uma escolha ideal para organizações que precisam de comunicação confiável e escalável entre seus sistemas e aplicações.
+
+## AWS Network Interfaces
+<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>
+
+Na AWS, as interfaces de rede desempenham um papel crucial na conectividade e performance das instâncias EC2. Entre as principais interfaces de rede oferecidas pela AWS, destacam-se a **Elastic Network Interface (ENI)**, **Elastic Network Adapter (ENA)** e **Elastic Fabric Adapter (EFA)**. Cada uma dessas interfaces atende a necessidades específicas de conectividade, desempenho e escalabilidade.
+
+### Elastic Network Interface (ENI)
+- **O que é:** A **Elastic Network Interface (ENI)** é uma interface de rede virtual que você pode associar a uma instância EC2 na AWS. Cada ENI pode ter múltiplos endereços IP, um endereço MAC, e uma ou mais políticas de segurança associadas.
+- **Funções Principais:**
+  - **Multihoming:** Permite que uma instância EC2 tenha várias interfaces de rede, possibilitando a separação de diferentes tipos de tráfego (por exemplo, tráfego de dados e tráfego de gerenciamento).
+  - **Failover:** Pode ser usada para fornecer failover entre diferentes interfaces de rede, aumentando a disponibilidade de suas instâncias.
+  - **Migração:** Uma ENI pode ser dissociada de uma instância EC2 e associada a outra, permitindo a migração de interfaces entre instâncias sem interrupção de serviço.
+
+- **Casos de Uso:**
+  - Implementações de alta disponibilidade, onde várias interfaces são usadas para redundância.
+  - Ambientes onde o tráfego precisa ser isolado por tipo (por exemplo, tráfego de rede pública e privada).
+
+### Elastic Network Adapter (ENA)
+- **O que é:** A **Elastic Network Adapter (ENA)** é uma interface de rede de alta performance projetada para fornecer maiores taxas de transferência e menor latência em instâncias EC2. Ela suporta taxas de transferência de até 100 Gbps, dependendo do tipo de instância.
+- **Funções Principais:**
+  - **Alta Performance:** Ideal para aplicações que exigem altíssimas taxas de transferência de dados, como Big Data, Machine Learning e HPC (Computação de Alta Performance).
+  - **Suporte a SR-IOV:** ENA suporta **Single Root I/O Virtualization (SR-IOV)**, permitindo a virtualização eficiente e acesso direto à interface de rede pelo hardware subjacente, reduzindo a sobrecarga de processamento.
+
+- **Casos de Uso:**
+  - Workloads que exigem baixa latência e alta largura de banda, como análise em tempo real ou streaming de dados.
+  - Infraestruturas onde o desempenho da rede é um fator crítico, como clusters de HPC ou grandes bancos de dados.
+
+### Elastic Fabric Adapter (EFA)
+- **O que é:** A **Elastic Fabric Adapter (EFA)** é uma interface de rede para instâncias EC2 que permite executar aplicativos de HPC (High Performance Computing) ou treinamento de Machine Learning em grande escala com requisitos extremamente baixos de latência.
+- **Funções Principais:**
+  - **Baixa Latência:** EFA oferece suporte à comunicação altamente paralela e de baixa latência entre instâncias, utilizando técnicas como RDMA (Remote Direct Memory Access).
+  - **Alta Performance em HPC:** Permite que aplicativos MPI (Message Passing Interface), usados em ambientes de HPC, comuniquem-se com baixa latência e alta eficiência entre nós de computação.
+
+- **Casos de Uso:**
+  - Aplicações de HPC que exigem comunicação entre nós com latência extremamente baixa, como simulações científicas, modelagem financeira ou renderização 3D.
+  - Treinamento de modelos de Machine Learning distribuídos que requerem grande paralelismo e baixa latência entre instâncias.
+
+### Comparação Resumida:
+
+| Característica       | ENI                             | ENA                              | EFA                             |
+|----------------------|---------------------------------|----------------------------------|---------------------------------|
+| **Função Principal** | Interface de rede virtual      | Alta performance em rede         | Baixa latência para HPC         |
+| **Desempenho**       | Geral                          | Alta (até 100 Gbps)              | Altíssimo, com suporte a RDMA   |
+| **Usos Comuns**      | Multihoming, failover          | Big Data, Machine Learning       | HPC, Machine Learning distribuído |
+| **Suporte a SR-IOV** | Não                            | Sim                              | Sim                             |
+| **Latência**         | Padrão                         | Baixa                            | Extremamente baixa              |
+
+### Conclusão:
+Cada uma dessas interfaces de rede - **ENI, ENA e EFA** - atende a diferentes necessidades e tipos de carga de trabalho na AWS. **ENI** é ideal para casos onde a flexibilidade e o gerenciamento de rede são necessários, **ENA** é voltada para workloads que demandam alta largura de banda, e **EFA** é essencial para cenários de HPC e aplicativos que exigem comunicação de baixa latência entre nós.
+
+Essas interfaces fornecem as ferramentas necessárias para maximizar a eficiência, desempenho e escalabilidade das aplicações na AWS, garantindo que você possa escolher a solução certa para cada cenário específico.
+
+## Placement Groups
+<https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/placement-groups.html>
+
+**Grupos de Posicionamento** (Placement Groups) são uma funcionalidade da AWS que permite controlar o posicionamento de instâncias Amazon EC2 em uma infraestrutura física subjacente. Essa configuração pode otimizar o desempenho de rede, melhorar a resiliência ou garantir a proximidade física das instâncias.
+
+### Tipos de Grupos de Posicionamento:
+
+#### 1. **Cluster Placement Group (Grupo de Posicionamento em Cluster)**
+   - **O que é:** Um Cluster Placement Group agrupa instâncias EC2 dentro de uma única zona de disponibilidade, em um grupo físico de servidores que estão muito próximos uns dos outros. Isso proporciona alta performance de rede e baixa latência entre as instâncias do grupo.
+   - **Características:**
+     - **Baixa Latência e Alta Largura de Banda:** Ideal para aplicações que exigem comunicação de rede rápida e volumosa entre instâncias, como clusters de HPC (High Performance Computing).
+     - **Desempenho de Rede Otimizado:** As instâncias em um Cluster Placement Group podem atingir a performance máxima de rede disponível entre si.
+   - **Exemplo de Uso:** Simulações científicas, renderização de gráficos, modelagem financeira e outras aplicações que exigem baixa latência e alta taxa de transferência de dados entre nós.
+
+#### 2. **Spread Placement Group (Grupo de Posicionamento em Dispersão)**
+   - **O que é:** Um Spread Placement Group distribui instâncias EC2 por diferentes hardwares físicos dentro de uma ou mais zonas de disponibilidade. Isso minimiza o risco de falha de hardware afetar várias instâncias ao mesmo tempo.
+   - **Características:**
+     - **Alta Resiliência:** Cada instância é colocada em um rack físico diferente, reduzindo a chance de falhas simultâneas.
+     - **Dispersão entre Zonas de Disponibilidade:** As instâncias podem ser distribuídas entre várias zonas de disponibilidade, aumentando ainda mais a tolerância a falhas.
+   - **Exemplo de Uso:** Aplicações críticas onde a resiliência é mais importante que o desempenho de rede, como bancos de dados distribuídos, serviços web com alta disponibilidade e sistemas de controle industrial.
+
+#### 3. **Partition Placement Group (Grupo de Posicionamento por Partições)**
+   - **O que é:** Um Partition Placement Group divide instâncias EC2 em grupos menores, chamados de "partições", dentro de uma única zona de disponibilidade ou entre várias zonas. Cada partição está fisicamente isolada das outras em termos de racks de hardware.
+   - **Características:**
+     - **Isolamento Físico:** Minimiza o impacto de falhas, garantindo que, se um rack falhar, apenas a partição correspondente seja afetada.
+     - **Escalabilidade:** Suporta um grande número de instâncias e pode ser utilizado em ambientes onde o isolamento físico é necessário, mas ainda se deseja alguma proximidade de rede entre as instâncias de uma mesma partição.
+   - **Exemplo de Uso:** Grandes clusters de big data, sistemas distribuídos de grande escala, bancos de dados com requisitos de replicação que exigem isolamento físico para redundância.
+
+### Como Escolher o Tipo de Grupo de Posicionamento:
+- **Cluster Placement Group:** Escolha quando a latência de rede e a largura de banda entre instâncias são críticos. Ideal para workloads que precisam de alta performance de rede entre instâncias.
+- **Spread Placement Group:** Escolha quando a resiliência é a principal preocupação, especialmente em aplicações onde a disponibilidade de instâncias é crítica, e o impacto de falhas simultâneas precisa ser minimizado.
+- **Partition Placement Group:** Escolha para grandes implementações que precisam de isolamento físico para redundância, mas ainda desejam manter algumas das vantagens de proximidade física dentro de cada partição.
+
+### Considerações Importantes:
+- **Capacidade de Instâncias:** A AWS não garante que todas as instâncias solicitadas para um Placement Group serão imediatamente disponíveis, especialmente em regiões ou zonas de disponibilidade muito populares. A alocação pode falhar se a AWS não conseguir atender à solicitação.
+- **Escalabilidade:** Placement Groups podem ser expandidos adicionando mais instâncias ao grupo, mas dependendo do tipo de grupo, pode haver limitações na flexibilidade de adicionar instâncias em um futuro próximo.
+- **Movimentação de Instâncias:** Instâncias EC2 não podem ser movidas entre Placement Groups após a criação. Para mover uma instância entre Placement Groups, a instância deve ser encerrada e recriada no novo grupo.
+
+### Exemplo Prático de Uso:
+1. **Cluster Placement Group:** Um pesquisador precisa realizar simulações científicas complexas que exigem a troca rápida de grandes volumes de dados entre vários nós de computação. Ele cria um Cluster Placement Group para garantir que as instâncias EC2 estejam fisicamente próximas, maximizando a largura de banda e minimizando a latência entre elas.
+
+2. **Spread Placement Group:** Uma empresa que opera um serviço de e-commerce global precisa garantir que suas instâncias EC2 estejam distribuídas de forma que uma falha de hardware não afete todo o sistema. Ela usa um Spread Placement Group para garantir que suas instâncias estejam em racks físicos diferentes, distribuídas em várias zonas de disponibilidade.
+
+3. **Partition Placement Group:** Uma organização de mídia gerencia grandes volumes de dados multimídia em um cluster Hadoop. Eles utilizam Partition Placement Groups para garantir que, mesmo com a distribuição de dados, há isolamento suficiente para prevenir a falha total do sistema, enquanto mantém a proximidade de rede necessária para o desempenho.
+
+### Conclusão:
+Os Grupos de Posicionamento na AWS oferecem flexibilidade para controlar como suas instâncias EC2 são alocadas fisicamente na infraestrutura da AWS, permitindo otimizar desempenho, resiliência e escalabilidade de acordo com as necessidades específicas de suas aplicações.
