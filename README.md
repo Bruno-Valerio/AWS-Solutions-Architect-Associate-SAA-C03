@@ -6,7 +6,7 @@ Este documento de dicas resume serviços, conceitos e práticas recomendadas imp
 
 As informações estão organizadas nas seguintes seções:
 
-### Índice
+## Índice
 - [Amazon Elastic Compute Cloud (EC2)](#amazon-elastic-compute-cloud-ec2)
 - [Amazon Elastic Container Service (ECS)](#amazon-elastic-container-service-ecs)
 - [Amazon Fargate](#amazon-fargate)
@@ -68,6 +68,11 @@ As informações estão organizadas nas seguintes seções:
 - [AWS Global Accelerator](#aws-global-accelerator)
 - [AWS IAM Identity Center](#aws-iam-identity-center)
 - [Systems Manager Session Manager](#systems-manager-session-manager)
+- [Amazon OpenSearch Service](#amazon-opensearch-service)
+- [Amazon Elasticsearch Service (AES)](#amazon-elasticsearch-service-aes)
+- [AWS Glue](#aws-glue)
+- [AWS WAF](#aws-waf)
+- [Amazon MQ](#amazon-mq)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -1799,3 +1804,177 @@ O **AWS Systems Manager Session Manager** é um recurso do AWS Systems Manager q
 - **Amazon S3 e CloudWatch Logs**: Armazene logs de sessões para análise e auditoria futura.
 
 O **AWS Systems Manager Session Manager** é uma ferramenta essencial para administradores que precisam de acesso seguro, auditável e controlado a instâncias EC2, sem a necessidade de gerenciar chaves SSH, bastion hosts ou abrir portas de rede, simplificando as operações e melhorando a segurança.
+
+## Amazon OpenSearch Service
+<https://docs.aws.amazon.com/pt_br/opensearch-service/>
+
+O Amazon OpenSearch Service (anteriormente conhecido como Amazon Elasticsearch Service) é um serviço gerenciado que facilita a implementação, operação e escalabilidade de clusters OpenSearch na nuvem da AWS. O OpenSearch é uma solução popular de análise de logs e pesquisa de dados que permite realizar buscas e visualizar grandes volumes de dados quase em tempo real.
+
+Aqui estão algumas informações curtas sobre o Amazon OpenSearch Service que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- **Serviço Gerenciado:** O OpenSearch Service é um serviço totalmente gerenciado que cuida de tarefas operacionais, como provisionamento de hardware, aplicação de patches de software, backups e recuperação.
+- **Busca e Análise:** Permite realizar buscas, monitoramento e análise em tempo real de dados de logs, métricas, e outros tipos de dados textuais e não estruturados.
+- **Escalabilidade:** O OpenSearch Service pode ser dimensionado automaticamente para lidar com mudanças na carga de trabalho, permitindo a adição de nós e aumento de armazenamento conforme necessário.
+- **Segurança:** Oferece suporte à criptografia de dados em repouso e em trânsito, controle de acesso baseado em identidade (IAM), autenticação por meio de Amazon Cognito e outros recursos de segurança avançados.
+- **Integração com Kibana e Dashboards OpenSearch:** Fornece uma interface gráfica para visualização de dados e criação de dashboards customizados.
+
+Aqui estão alguns detalhes adicionais sobre o Amazon OpenSearch Service que você pode querer saber:
+
+- **Domínios OpenSearch:** Você pode configurar e gerenciar domínios OpenSearch, que são ambientes de clusters gerenciados. Cada domínio é isolado dos outros e pode ser configurado com suas próprias políticas de segurança e recursos.
+- **Instâncias de Suporte:** Suporta uma ampla variedade de instâncias, desde opções de baixo custo até instâncias otimizadas para armazenamento e memória para lidar com cargas de trabalho exigentes.
+- **Backup e Recuperação:** Oferece backups automatizados e manuais para garantir que seus dados estejam protegidos. Os snapshots automáticos são feitos diariamente, e você pode restaurar um cluster a partir de um snapshot com facilidade.
+- **Monitoramento e Alertas:** O Amazon OpenSearch Service se integra com o Amazon CloudWatch para monitoramento detalhado e permite configurar alertas baseados em métricas de desempenho e integridade dos clusters.
+- **Compatibilidade com Elasticsearch:** O OpenSearch é baseado em Elasticsearch e é compatível com as APIs do Elasticsearch, permitindo que você migre ou integre facilmente suas aplicações existentes.
+
+### Exemplo de Casos de Uso do Amazon OpenSearch Service:
+
+1. **Análise de Logs e Monitoramento de Aplicações:** Use o OpenSearch Service para coletar, analisar e monitorar logs e métricas de suas aplicações e infraestrutura, ajudando a identificar problemas operacionais e a melhorar a performance.
+2. **Pesquisa e Análise de Texto:** Implante o OpenSearch Service para habilitar funcionalidades de pesquisa avançada em grandes volumes de dados textuais, como documentos, e-mails e registros.
+3. **Dashboarding e Visualização de Dados:** Utilize o OpenSearch Dashboards (anteriormente Kibana) para criar dashboards interativos que permitem visualizar e explorar os dados armazenados no OpenSearch Service.
+
+### Integrações com Outros Serviços da AWS:
+
+- **Amazon S3:** Ingestão de dados diretamente do Amazon S3 para análise no OpenSearch Service.
+- **AWS Lambda:** Processamento de eventos e dados antes de enviá-los para o OpenSearch Service para análise.
+- **Amazon CloudWatch:** Monitoramento e visualização de métricas e logs de desempenho do OpenSearch Service.
+
+O Amazon OpenSearch Service é uma poderosa ferramenta para análise, monitoramento e visualização de dados em tempo real, especialmente em cenários que exigem escalabilidade, segurança e gerenciamento eficiente de grandes volumes de dados textuais e logs.
+
+## Amazon Elasticsearch Service (AES)
+<https://docs.aws.amazon.com/pt_br/elasticsearch-service/>
+
+O Amazon Elasticsearch Service (AES) é um serviço gerenciado que facilita a implantação, operação e escalabilidade de clusters Elasticsearch na nuvem AWS. Elasticsearch é uma ferramenta de busca e análise de dados em tempo real, amplamente utilizada para indexação, pesquisa e visualização de grandes volumes de dados.
+
+Aqui estão algumas informações curtas sobre o Amazon Elasticsearch Service que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- **Serviço Gerenciado:** O AES é totalmente gerenciado pela AWS, o que significa que a AWS cuida do provisionamento de hardware, instalação do software, aplicação de patches, backups e recuperação de desastres.
+- **Escalabilidade Automática:** AES permite escalar automaticamente clusters Elasticsearch conforme a carga de trabalho aumenta, garantindo alta disponibilidade e desempenho.
+- **Segurança:** O serviço oferece recursos de segurança como criptografia em repouso e em trânsito, controle de acesso baseado em identidade (IAM), autenticação por meio de Amazon Cognito e integração com AWS Key Management Service (KMS) para gerenciamento de chaves.
+- **Integração com Kibana:** O Elasticsearch Service é integrado ao Kibana, uma ferramenta de visualização que permite criar dashboards interativos e explorar os dados armazenados no Elasticsearch.
+
+Aqui estão alguns detalhes adicionais sobre o Amazon Elasticsearch Service que você pode querer saber:
+
+- **Domínios Elasticsearch:** No AES, você gerencia seus clusters através de domínios. Cada domínio é uma instância gerenciada de Elasticsearch com suas próprias políticas de acesso, configurações de rede e escalabilidade.
+- **Instâncias Suportadas:** O serviço suporta uma variedade de tipos de instâncias, incluindo opções otimizadas para armazenamento e memória, adequadas para diferentes cargas de trabalho.
+- **Backups Automáticos:** AES realiza snapshots automáticos diários dos dados armazenados no Elasticsearch, que podem ser usados para recuperação em caso de falhas.
+- **Monitoramento:** O serviço se integra ao Amazon CloudWatch para monitorar a integridade do cluster e permite criar alarmes baseados em métricas específicas do Elasticsearch.
+- **Compatibilidade:** O AES é compatível com várias versões do Elasticsearch, permitindo que você escolha a versão que melhor se adequa às suas necessidades de aplicação.
+
+### Exemplo de Casos de Uso do Amazon Elasticsearch Service:
+
+1. **Análise de Logs:** Utilize o AES para centralizar e analisar logs de aplicações e sistemas, facilitando a identificação e resolução de problemas em tempo real.
+2. **Pesquisa em Dados Textuais:** Implemente funcionalidades de pesquisa avançada para websites, aplicações e documentos, aproveitando as capacidades do Elasticsearch para busca de texto completo.
+3. **Dashboards de Monitoramento:** Crie dashboards de monitoramento usando Kibana para visualizar e interpretar grandes volumes de dados de maneira intuitiva.
+
+### Integrações com Outros Serviços da AWS:
+
+- **Amazon S3:** Você pode integrar o AES com o Amazon S3 para ingestão de grandes volumes de dados.
+- **AWS Lambda:** Utilizado para processar e transformar dados antes de inseri-los no Elasticsearch.
+- **Amazon CloudWatch:** Para monitorar e visualizar métricas e logs do Elasticsearch Service.
+
+O Amazon Elasticsearch Service foi uma solução robusta para análise, busca e visualização de dados, sendo uma escolha comum para projetos que exigem escalabilidade, segurança e facilidade de uso em ambientes de grandes volumes de dados.
+
+## AWS Glue
+<https://docs.aws.amazon.com/pt_br/glue/>
+
+O AWS Glue é um serviço de ETL (Extract, Transform, Load) totalmente gerenciado que facilita a preparação e a transformação de dados para análises. O Glue automatiza tarefas de descoberta, limpeza, enriquecimento e carregamento de dados, reduzindo significativamente o tempo e esforço necessários para preparar dados para análise.
+
+### Informações Principais sobre o AWS Glue:
+- **Serviço de ETL Gerenciado:** O AWS Glue gerencia a infraestrutura subjacente necessária para executar tarefas de ETL, permitindo que você se concentre na transformação e movimentação dos dados.
+- **Catálogo de Dados:** O Glue inclui um Catálogo de Dados centralizado que armazena metadados e esquemas de dados, facilitando a descoberta e reutilização de conjuntos de dados.
+- **ETL Automatizado:** O AWS Glue gera automaticamente código ETL em Python ou Scala para a transformação de dados, com base na estrutura e na semântica dos dados que você deseja processar.
+- **Jobs Serverless:** O AWS Glue permite a execução de jobs ETL de forma serverless, eliminando a necessidade de provisionar ou gerenciar recursos computacionais.
+- **Integração com Serviços AWS:** O Glue se integra com outros serviços da AWS, como Amazon S3, Amazon RDS, Amazon Redshift, Amazon Athena e Amazon EMR, para facilitar a movimentação e transformação de dados entre diferentes fontes e destinos.
+
+### Como o AWS Glue Funciona:
+1. **Data Crawlers:** Crawlers do Glue escaneiam fontes de dados como Amazon S3, bancos de dados relacionais, e data warehouses para inferir esquemas e coletar metadados, que são armazenados no Catálogo de Dados do Glue.
+2. **Transformações ETL:** Com base no esquema e nos dados detectados, o AWS Glue pode gerar automaticamente scripts ETL que você pode ajustar conforme necessário. Esses scripts podem realizar operações como filtragem, agregação, junção e formatação de dados.
+3. **Orquestração de Jobs:** O Glue permite que você agende e gerencie jobs de ETL, que podem ser disparados por eventos ou executados em horários específicos, integrando facilmente esses processos em pipelines de dados existentes.
+4. **Catálogo de Dados:** O Catálogo de Dados do Glue armazena metadados sobre os dados descobertos, como esquemas, locais e permissões, tornando mais fácil para outros serviços da AWS acessarem e utilizarem esses dados.
+
+### Benefícios do AWS Glue:
+- **Redução de Tempo e Esforço:** Automatiza grande parte das tarefas de ETL, reduzindo o tempo necessário para preparar dados para análise.
+- **Escalabilidade:** O Glue escala automaticamente para lidar com cargas de trabalho variáveis, garantindo que seus jobs ETL sejam executados de forma eficiente, independentemente do tamanho dos dados.
+- **Flexibilidade:** Suporta uma ampla gama de fontes de dados e formatos, permitindo que você integre dados de diferentes sistemas em uma única plataforma de análise.
+- **Baixo Custo:** Como serviço serverless, você paga apenas pelos recursos que utilizar, eliminando a necessidade de investir em infraestrutura dedicada para operações de ETL.
+
+### Exemplos de Casos de Uso do AWS Glue:
+1. **Integração de Dados:** Use o AWS Glue para integrar dados de várias fontes, como bancos de dados on-premise, Amazon S3 e data warehouses, em um único repositório centralizado para análise.
+2. **Preparação de Dados para Machine Learning:** Prepare e transforme grandes conjuntos de dados antes de alimentá-los em modelos de machine learning, garantindo que os dados estejam limpos e no formato correto.
+3. **Análise em Tempo Real:** Utilize o AWS Glue junto com serviços como Amazon Kinesis e Amazon Redshift para realizar análises em tempo real, transformando dados assim que são ingeridos.
+
+### Integrações com Outros Serviços da AWS:
+- **Amazon S3:** Armazene e processe dados brutos no S3, utilizando o Glue para transformar e carregar os dados em destinos de análise.
+- **Amazon Redshift:** Use o Glue para extrair e transformar dados antes de carregá-los no Redshift para análises avançadas.
+- **Amazon Athena:** O Glue pode preparar dados que serão consultados diretamente no Amazon S3 usando Athena, aproveitando o Catálogo de Dados para gerenciar metadados.
+
+O **AWS Glue** é uma ferramenta poderosa para simplificar e automatizar tarefas de ETL, integrando-se facilmente ao ecossistema da AWS para oferecer uma solução completa para a preparação e análise de dados em grande escala.
+
+## AWS WAF (Web Application Firewall)
+<https://docs.aws.amazon.com/pt_br/waf/>
+
+O AWS WAF (Web Application Firewall) é um serviço de firewall para aplicações web que ajuda a proteger suas aplicações contra ameaças comuns na web, como ataques de injeção SQL, scripts entre sites (XSS) e outras vulnerabilidades na camada de aplicação. O AWS WAF permite criar regras personalizadas para filtrar o tráfego da web e mitigar ameaças antes que elas alcancem seus recursos.
+
+### Informações Principais sobre o AWS WAF:
+- **Proteção de Aplicações Web:** O AWS WAF protege suas aplicações web de ameaças comuns ao permitir que você crie e gerencie regras de segurança que controlam o tráfego HTTP/HTTPS.
+- **Regras Personalizáveis:** Você pode criar suas próprias regras personalizadas ou utilizar regras pré-configuradas fornecidas pela AWS e parceiros do AWS Marketplace.
+- **Integração com Outros Serviços:** O AWS WAF integra-se com Amazon CloudFront, Application Load Balancer (ALB), Amazon API Gateway, e AWS App Runner para proteger suas aplicações distribuídas e serviços front-end.
+- **Web ACLs:** O AWS WAF usa Web ACLs (Access Control Lists) para aplicar regras ao tráfego que chega às suas aplicações. As Web ACLs permitem que você defina ações como permitir, bloquear ou monitorar solicitações específicas com base em condições que você especifica.
+- **Proteção Automática:** O AWS WAF oferece proteção contra ameaças conhecidas e pode ser configurado para se adaptar automaticamente a novas ameaças por meio de regras gerenciadas.
+
+### Como o AWS WAF Funciona:
+1. **Definição de Regras:** Você cria regras que especificam critérios para permitir, bloquear ou monitorar o tráfego HTTP/HTTPS. Essas regras podem ser baseadas em endereços IP, cabeçalhos HTTP, strings específicas nas URIs, e muito mais.
+2. **Criação de Web ACLs:** Uma Web ACL é uma coleção de regras que você aplica a uma ou mais instâncias de aplicação, como um CloudFront Distribution ou um Application Load Balancer.
+3. **Monitoramento e Ação:** As Web ACLs aplicam as regras definidas para todo o tráfego que passa pelo serviço, bloqueando ou permitindo solicitações com base nos critérios definidos. Você pode monitorar o tráfego em tempo real e ajustar as regras conforme necessário.
+
+### Benefícios do AWS WAF:
+- **Segurança Personalizável:** O AWS WAF permite que você personalize as regras de segurança para atender às necessidades específicas da sua aplicação, protegendo contra uma ampla gama de ataques.
+- **Visibilidade e Monitoramento:** O WAF oferece visibilidade detalhada sobre o tráfego da web que chega à sua aplicação, permitindo que você identifique e reaja rapidamente a padrões de tráfego suspeitos.
+- **Facilidade de Implementação:** Com integração nativa a serviços como CloudFront e ALB, você pode implementar proteção WAF rapidamente, sem a necessidade de mudanças significativas na arquitetura de sua aplicação.
+- **Escalabilidade:** O AWS WAF é altamente escalável e pode proteger aplicações de qualquer tamanho, desde pequenos sites até grandes aplicações empresariais.
+
+### Exemplos de Casos de Uso do AWS WAF:
+1. **Proteção Contra Ataques DDoS:** Use o AWS WAF para bloquear tráfego suspeito ou malicioso antes que ele possa sobrecarregar sua aplicação, atuando como uma primeira linha de defesa contra ataques de negação de serviço distribuído (DDoS).
+2. **Bloqueio de IPs Maliciosos:** Crie regras no WAF para bloquear IPs ou faixas de IPs conhecidos por atividades maliciosas, protegendo sua aplicação contra acessos indesejados.
+3. **Filtragem de Solicitações Web:** Utilize o AWS WAF para filtrar solicitações web que contenham strings suspeitas ou padrões associados a ataques, como tentativas de injeção SQL ou scripts entre sites (XSS).
+
+### Integrações com Outros Serviços da AWS:
+- **Amazon CloudFront:** Proteja seus sites e APIs distribuídos globalmente com o AWS WAF integrado ao CloudFront.
+- **Application Load Balancer (ALB):** Utilize o WAF para proteger aplicações distribuídas por trás de um ALB.
+- **Amazon API Gateway:** Implemente o AWS WAF para proteger suas APIs e limitar o acesso com base em regras de segurança configuráveis.
+
+O **AWS WAF** é uma ferramenta essencial para qualquer organização que deseja proteger suas aplicações web de ataques comuns na camada de aplicação, garantindo maior segurança e resiliência contra ameaças.
+
+## Amazon MQ
+<https://docs.aws.amazon.com/pt_br/amazon-mq/>
+
+O Amazon MQ é um serviço gerenciado de brokers de mensagens que facilita a configuração e operação de brokers de mensagens no ambiente de nuvem AWS. Ele é compatível com APIs de mensagens padrão da indústria, incluindo JMS, NMS, AMQP, STOMP, MQTT, e WebSocket, permitindo que você migre facilmente sistemas de mensagens existentes para a nuvem sem precisar reescrever o código.
+
+### Informações Principais sobre o Amazon MQ:
+- **Brokers de Mensagens Gerenciados:** Amazon MQ gerencia a infraestrutura subjacente, como provisionamento de hardware, aplicação de patches de software, e recuperação de falhas, para que você possa focar no desenvolvimento das suas aplicações.
+- **Compatibilidade com Padrões:** Suporta protocolos de mensagens padrão da indústria, facilitando a migração de aplicativos que utilizam brokers de mensagens como ActiveMQ ou RabbitMQ para a AWS.
+- **Alta Disponibilidade:** Oferece opções de implantação multi-AZ para alta disponibilidade, garantindo que seus brokers de mensagens estejam sempre acessíveis e resilientes a falhas.
+- **Escalabilidade:** O Amazon MQ escala automaticamente para lidar com picos de tráfego, garantindo que suas mensagens sejam entregues de forma confiável e no tempo certo.
+
+### Como o Amazon MQ Funciona:
+1. **Configuração de Brokers:** Você pode configurar um broker de mensagens Amazon MQ em minutos, especificando detalhes como o tipo de instância, configurações de rede, e políticas de segurança.
+2. **Conectividade de Aplicações:** Suas aplicações se conectam ao broker Amazon MQ usando as mesmas APIs e bibliotecas que já utilizam, sem a necessidade de modificar o código.
+3. **Gerenciamento Automático:** O Amazon MQ cuida de tarefas operacionais como backups, monitoramento, e escalabilidade, permitindo que você se concentre nas funcionalidades do seu aplicativo.
+
+### Benefícios do Amazon MQ:
+- **Migração Fácil:** A compatibilidade com protocolos de mensagens padrão permite a migração fácil de brokers de mensagens on-premise para a nuvem AWS sem grandes mudanças no código da aplicação.
+- **Gerenciamento Simplificado:** Como serviço gerenciado, o Amazon MQ elimina a necessidade de manter a infraestrutura subjacente, reduzindo a complexidade operacional e o tempo de administração.
+- **Resiliência e Disponibilidade:** Com suporte a configurações multi-AZ, o Amazon MQ proporciona alta disponibilidade, garantindo que seus sistemas de mensagens estejam sempre operacionais.
+- **Segurança:** O Amazon MQ oferece criptografia de dados em trânsito e em repouso, além de integrações com AWS Identity and Access Management (IAM) para controle de acesso granular.
+
+### Exemplos de Casos de Uso do Amazon MQ:
+1. **Integração de Sistemas Distribuídos:** Use o Amazon MQ para conectar diferentes componentes de uma aplicação distribuída, garantindo a comunicação confiável entre serviços.
+2. **Migração de Sistemas Legados:** Empresas com sistemas de mensagens legados, como ActiveMQ ou RabbitMQ, podem migrar para a nuvem AWS utilizando o Amazon MQ sem precisar reescrever suas aplicações.
+3. **Processamento Assíncrono:** Implementar filas de mensagens para processar tarefas de maneira assíncrona, garantindo que as mensagens sejam enfileiradas e processadas conforme a capacidade do sistema.
+
+### Integrações com Outros Serviços da AWS:
+- **Amazon SQS e SNS:** Combine o Amazon MQ com outros serviços de mensagens da AWS, como Amazon SQS e SNS, para construir arquiteturas de comunicação robustas.
+- **Amazon CloudWatch:** Monitore o desempenho dos brokers de mensagens e configure alarmes para eventos críticos usando Amazon CloudWatch.
+- **AWS IAM:** Gerencie o acesso aos brokers de mensagens utilizando políticas de segurança configuradas com o AWS IAM.
+
+O **Amazon MQ** é uma solução robusta para gerenciar brokers de mensagens na nuvem AWS, oferecendo compatibilidade com sistemas existentes, alta disponibilidade, e segurança, tornando-se uma escolha ideal para organizações que precisam de comunicação confiável e escalável entre seus sistemas e aplicações.
