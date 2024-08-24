@@ -75,6 +75,9 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon MQ](#amazon-mq)
 - [AWS Network Interfaces](#aws-network-interfaces)
 - [Placement Groups](#placement-groups)
+- [AWS Outposts](#aws-outposts)
+- [AWS Well-Architected Framework](#aws-well-architected-framework)
+- [AWS Systems Manager Session Manager](#aws-systems-manager-session-manager)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -366,26 +369,44 @@ O Gateway Load Balancer é uma solução poderosa para integrar e gerenciar appl
 ## AWS Transfer for SFTP
 <https://docs.aws.amazon.com/pt_br/transfer/>
 
-O AWS Transfer for SFTP é um serviço gerenciado que facilita a transferência de arquivos pelo Secure File Transfer Protocol (SFTP). Ele fornece uma maneira segura e confiável de transferir arquivos entre seus sistemas locais e serviços de armazenamento da AWS, como Amazon S3 e Amazon Elastic File System (EFS).
+O **AWS Transfer for SFTP** é um serviço gerenciado pela AWS que facilita a transferência de arquivos usando o **Secure File Transfer Protocol (SFTP)**. Este protocolo é amplamente utilizado para transferir arquivos de forma segura pela internet, especialmente em cenários empresariais onde a segurança e a integridade dos dados são críticas.
 
-Aqui estão algumas informações curtas sobre o AWS Transfer for SFTP que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+### O Que é SFTP?
 
-- O AWS Transfer for SFTP é um serviço gerenciado que facilita a transferência de arquivos pelo SFTP.
-- O AWS Transfer for SFTP fornece uma maneira segura e confiável de transferir arquivos entre seus sistemas locais e serviços de armazenamento da AWS.
-- O AWS Transfer for SFTP oferece suporte a uma variedade de clientes SFTP, incluindo WinSCP, Cyberduck e FileZilla.
-- O AWS Transfer for SFTP fornece uma variedade de recursos para ajudar você a gerenciar suas transferências de arquivos, incluindo:
-- Gerenciamento de usuários e grupos
-- Controle de acesso
-- Registro de atividades
-- Notificações de transferência de arquivos
+- **SFTP (Secure File Transfer Protocol)** é um protocolo de rede que proporciona transferência de arquivos segura. Ele combina o protocolo FTP com criptografia SSH, garantindo que os dados sejam protegidos contra interceptação e alteração durante a transferência.
+- **Utilização Comum:** SFTP é comumente usado em ambientes onde é necessário enviar e receber arquivos com segurança, como em trocas de dados entre empresas, backup de arquivos e transferência de grandes volumes de dados.
 
-Aqui estão alguns detalhes adicionais sobre o AWS Transfer for SFTP que você pode querer saber:
+### Como o AWS Transfer for SFTP Funciona?
 
-- O AWS Transfer for SFTP pode ser usado para transferir arquivos de qualquer tamanho, de pequenos arquivos de texto a grandes arquivos de vídeo.
-- O AWS Transfer for SFTP pode ser usado para transferir arquivos entre seus sistemas locais e serviços de armazenamento da AWS em qualquer região da AWS.
-- O AWS Transfer for SFTP pode ser integrado a uma variedade de outros serviços da AWS, como Amazon CloudTrail e Amazon CloudWatch.
+O AWS Transfer for SFTP permite que você configure rapidamente um endpoint SFTP na AWS, integrando-se diretamente com serviços de armazenamento como **Amazon S3** ou **Amazon Elastic File System (EFS)**. Isso significa que você pode utilizar SFTP para transferir arquivos diretamente para esses serviços de armazenamento na nuvem, sem a necessidade de gerenciar servidores ou infraestrutura complexa.
 
-O AWS Transfer for SFTP é uma ferramenta poderosa para transferir arquivos por SFTP de forma segura e confiável. É fácil de usar e fornece uma variedade de recursos para ajudar você a gerenciar suas transferências de arquivos de forma eficiente.
+### Características Principais:
+
+- **Gerenciamento de Usuários:** Você pode facilmente criar e gerenciar usuários que precisam acessar o endpoint SFTP, configurando permissões específicas para acesso a arquivos e diretórios.
+- **Segurança:** Todas as transferências são criptografadas usando o protocolo SSH, garantindo que seus dados estejam protegidos contra interceptação.
+- **Integração com AWS Storage:** O AWS Transfer for SFTP permite que você armazene os arquivos transferidos diretamente em buckets do Amazon S3 ou em sistemas de arquivos do Amazon EFS, integrando suas transferências SFTP com seus processos de armazenamento e análise de dados na AWS.
+- **Escalabilidade e Disponibilidade:** O serviço é escalável e altamente disponível, gerenciado pela AWS, o que significa que você não precisa se preocupar com a infraestrutura subjacente.
+
+### Quando Usar o AWS Transfer for SFTP?
+
+- **Migração de Dados:** Se você precisa migrar grandes volumes de dados de servidores locais para a AWS, o AWS Transfer for SFTP pode facilitar essa transferência de forma segura.
+- **Integração com Parceiros:** Para empresas que precisam trocar arquivos com parceiros comerciais que utilizam SFTP como padrão, o AWS Transfer for SFTP oferece uma solução direta e segura.
+- **Backup e Armazenamento:** Se sua organização utiliza SFTP para backup de arquivos, você pode integrar essas transferências diretamente com o Amazon S3 ou EFS, aproveitando as capacidades de armazenamento e recuperação da AWS.
+
+### Como Usar o AWS Transfer for SFTP na AWS:
+
+1. **Configuração do Endpoint SFTP:** Crie um endpoint SFTP no AWS Transfer for SFTP, associando-o a um bucket S3 ou sistema de arquivos EFS.
+2. **Gerenciamento de Usuários:** Configure os usuários que terão acesso ao serviço, definindo permissões e chaves SSH para autenticação.
+3. **Transferência de Arquivos:** Utilize qualquer cliente SFTP padrão (como WinSCP, FileZilla, etc.) para conectar-se ao endpoint e transferir arquivos diretamente para o S3 ou EFS.
+4. **Monitoramento e Auditoria:** Integre o AWS Transfer for SFTP com o Amazon CloudWatch e AWS CloudTrail para monitorar as transferências e manter um registro de auditoria das atividades.
+
+### Benefícios:
+
+- **Simplicidade:** Elimina a necessidade de gerenciar servidores SFTP, oferecendo uma solução "plug-and-play" gerenciada pela AWS.
+- **Segurança:** Aproveita o protocolo SFTP para garantir transferências seguras e criptografadas.
+- **Integração:** Conecta-se diretamente com os principais serviços de armazenamento da AWS, facilitando o uso de SFTP em ambientes modernos de nuvem.
+
+Em resumo, o **AWS Transfer for SFTP** é uma solução poderosa para empresas que necessitam de uma maneira segura e gerenciada de transferir arquivos via SFTP, aproveitando a infraestrutura escalável e segura da AWS para armazenamento e processamento de dados.
 
 ## AWS Direct Connect
 <https://docs.aws.amazon.com/pt_br/directconnect/>
@@ -1487,7 +1508,7 @@ O AWS CodeCommit é uma ferramenta poderosa e flexível para gerenciar seus repo
 ## Amazon AppFlow
 <https://docs.aws.amazon.com/pt_br/appflow/>
 
-O Amazon AppFlow é um serviço totalmente gerenciado que permite transferir dados de forma segura entre Software-as-a-Service (SaaS) e serviços da AWS sem a necessidade de escrever código personalizado. O AppFlow facilita a integração de dados entre aplicativos SaaS, como Salesforce, ServiceNow e Slack, e os serviços da AWS, como Amazon S3 e Amazon Redshift.
+O Amazon AppFlow é um serviço totalmente gerenciado que permite transferir dados de forma segura entre aplicativos SaaS (como Salesforce, ServiceNow e Slack) e serviços da AWS (como Amazon S3 e Amazon Redshift) sem a necessidade de escrever código personalizado ou utilizar instâncias EC2 para intermediar a conexão. O AppFlow pode realizar essas transferências de dados automaticamente, e também oferece funcionalidades para processar os dados durante a transferência, como redimensionar imagens ou aplicar outras transformações, simplificando a integração e o gerenciamento de dados entre SaaS e a AWS.
 
 ### Principais características do Amazon AppFlow:
 
@@ -1519,7 +1540,7 @@ Aqui está uma descrição sobre o **AWS Network Firewall** para complementar se
 ## AWS Network Firewall
 <https://docs.aws.amazon.com/pt_br/network-firewall/latest/developerguide/what-is-aws-network-firewall.html>
 
-O **AWS Network Firewall** é um serviço de firewall gerenciado que facilita a implantação de controles de segurança de rede escaláveis na AWS. Ele é projetado para proteger suas VPCs (Virtual Private Clouds) ao permitir a criação de regras personalizadas que podem inspecionar, permitir ou bloquear tráfego de rede de acordo com suas necessidades específicas de segurança.
+O **AWS Network Firewall** é um serviço de firewall gerenciado que facilita a implantação de controles de segurança de rede escaláveis na AWS. Ele é projetado para proteger suas VPCs (Virtual Private Clouds) ao permitir a criação de regras personalizadas que podem inspecionar, permitir ou bloquear tráfego de rede de acordo com suas necessidades específicas de segurança. Ele permite que você inspecione e filtre o tráfego de entrada e saída de suas VPCs, aplicando regras de segurança para bloquear ameaças, como intrusões e ataques maliciosos.
 
 ### Principais Características:
 
@@ -2079,3 +2100,131 @@ Essas interfaces fornecem as ferramentas necessárias para maximizar a eficiênc
 
 ### Conclusão:
 Os Grupos de Posicionamento na AWS oferecem flexibilidade para controlar como suas instâncias EC2 são alocadas fisicamente na infraestrutura da AWS, permitindo otimizar desempenho, resiliência e escalabilidade de acordo com as necessidades específicas de suas aplicações.
+
+## AWS Outposts
+<https://docs.aws.amazon.com/pt_br/outposts/>
+
+O **AWS Outposts** é um serviço que traz a infraestrutura, serviços, APIs e ferramentas da AWS para as suas instalações locais, permitindo que você execute cargas de trabalho de forma consistente tanto na nuvem AWS quanto no seu próprio data center. Com o AWS Outposts, você pode usar o mesmo hardware e software que a AWS utiliza em suas regiões, garantindo uma experiência híbrida consistente.
+
+### Características Principais do AWS Outposts:
+- **Infraestrutura Local:** AWS Outposts oferece racks de servidores físicos instalados em suas instalações, com a mesma infraestrutura utilizada pela AWS em suas regiões.
+- **Serviços AWS Disponíveis Localmente:** Outposts permite que você execute uma variedade de serviços AWS localmente, incluindo Amazon EC2, Amazon EBS, Amazon RDS, Amazon ECS, Amazon EKS, e Amazon S3, entre outros.
+- **Baixa Latência:** Ideal para aplicações que exigem latência ultrabaixa, uma vez que os dados e aplicações podem residir na mesma instalação que os usuários.
+- **Conectividade com a Nuvem AWS:** Outposts se conecta de forma nativa à nuvem da AWS, permitindo que você gerencie e integre recursos locais e na nuvem a partir de uma única interface.
+
+### Quando Usar o AWS Outposts:
+- **Requisitos de Latência:** Para aplicações que necessitam de latência extremamente baixa, como sistemas de controle industrial, processamento em tempo real, ou streaming de mídia local.
+- **Soberania de Dados:** Quando a legislação ou políticas internas exigem que os dados sejam mantidos e processados dentro das fronteiras nacionais ou em um local específico.
+- **Ambientes Híbridos:** Para empresas que precisam manter parte da infraestrutura local, mas querem aproveitar os benefícios da nuvem da AWS para outras partes de suas operações.
+- **Migração Gradual:** Para organizações que desejam migrar gradualmente para a nuvem, mantendo certos sistemas críticos localmente enquanto movem outros para a nuvem.
+
+### Benefícios do AWS Outposts:
+- **Consistência Operacional:** A mesma experiência de nuvem, API, e ferramentas de gerenciamento usadas na AWS estão disponíveis localmente.
+- **Segurança e Conformidade:** Mantém os dados locais sob as mesmas medidas de segurança que você utilizaria na nuvem da AWS, com suporte para auditoria e conformidade.
+- **Escalabilidade e Flexibilidade:** Escale facilmente entre os recursos locais e a nuvem AWS conforme necessário, sem necessidade de reconfiguração complexa.
+
+### Integrações e Suporte:
+- **Gerenciamento Centralizado:** Outposts pode ser gerenciado usando o AWS Management Console, AWS CLI, e SDKs, da mesma forma que os recursos na nuvem AWS.
+- **Serviços Integrados:** Outposts integra-se a uma variedade de serviços AWS, como IAM, CloudFormation, e Amazon CloudWatch, permitindo um gerenciamento consistente e eficiente.
+
+### Exemplo de Casos de Uso:
+1. **Ambientes de Produção e Manufatura:** Empresas que exigem controle em tempo real e latência ultrabaixa para operações críticas, como robótica industrial ou sistemas de automação de fábricas.
+2. **Setor Financeiro:** Instituições financeiras que necessitam manter dados sensíveis localmente por motivos regulatórios, mas que também desejam escalar rapidamente para a nuvem.
+3. **Saúde:** Hospitais e clínicas que precisam armazenar e processar dados de pacientes localmente devido a regulamentações de privacidade, mas que ainda desejam utilizar serviços de análise na nuvem.
+
+O **AWS Outposts** é ideal para empresas que necessitam de uma solução híbrida que combina a infraestrutura da AWS com os requisitos de latência, segurança ou conformidade local, proporcionando flexibilidade e uma experiência unificada na nuvem e no local.
+
+## AWS Well-Architected Framework
+<https://docs.aws.amazon.com/pt_br/wellarchitected/>
+
+O **AWS Well-Architected Framework** é um conjunto de diretrizes e melhores práticas criado pela AWS para ajudar arquitetos de soluções a projetar e operar sistemas de TI na nuvem de forma segura, eficiente, resiliente e econômica. Ele é organizado em seis pilares que abordam diferentes aspectos fundamentais da arquitetura na nuvem.
+
+### Os Seis Pilares do AWS Well-Architected Framework:
+
+1. **Excelência Operacional (Operational Excellence):**
+   - **Descrição:** Foca em operações e monitoramento de sistemas para gerar valor comercial, além de melhorar continuamente os processos e procedimentos.
+   - **Boas Práticas:** Automatizar mudanças, responder a eventos, definir padrões de operações diárias, e gerenciar falhas.
+
+2. **Segurança (Security):**
+   - **Descrição:** Protege informações, sistemas e ativos enquanto oferece valor comercial por meio de avaliações de risco e controles de mitigação.
+   - **Boas Práticas:** Implementar controles de identidade e acesso, proteção de dados, e monitoramento contínuo de eventos de segurança.
+
+3. **Confiabilidade (Reliability):**
+   - **Descrição:** Assegura que um sistema possa se recuperar de falhas e atender aos requisitos de forma consistente e correta.
+   - **Boas Práticas:** Planejar recuperação de desastres, dimensionar automaticamente para lidar com mudanças na demanda e gerenciar mudanças para evitar falhas.
+
+4. **Eficiência de Desempenho (Performance Efficiency):**
+   - **Descrição:** Usa recursos de TI de forma eficiente para atender às demandas do sistema, mesmo quando estas variam ao longo do tempo.
+   - **Boas Práticas:** Escolher tipos de instâncias de forma inteligente, testar a eficiência do sistema, e adotar novas tecnologias para otimizar o desempenho.
+
+5. **Otimização de Custos (Cost Optimization):**
+   - **Descrição:** Evita gastos desnecessários e assegura que os recursos sejam utilizados da maneira mais econômica possível.
+   - **Boas Práticas:** Implementar políticas de orçamentação, analisar e alocar custos, utilizar recursos sob demanda e explorar instâncias reservadas e Spot Instances para reduzir despesas.
+
+6. **Sustentabilidade (Sustainability):**
+   - **Descrição:** Visa minimizar os impactos ambientais dos sistemas na nuvem, otimizando o uso de recursos para promover a sustentabilidade a longo prazo.
+   - **Boas Práticas:** Adotar práticas de eficiência energética, gerenciar e otimizar o ciclo de vida dos recursos, e implementar práticas de descarte seguro e eficiente.
+
+### Benefícios do AWS Well-Architected Framework:
+- **Melhoria Contínua:** Ajuda as organizações a identificar lacunas e áreas de melhoria em suas arquiteturas.
+- **Padrões Consistentes:** Fornece um modelo padrão para avaliar a qualidade de arquitetura em diferentes projetos.
+- **Redução de Riscos:** Mitiga riscos através de recomendações de segurança e confiabilidade.
+- **Otimização de Recursos:** Ajuda a otimizar custos e recursos, garantindo a eficiência operacional.
+
+### Ferramenta Well-Architected:
+A AWS oferece a **AWS Well-Architected Tool**, uma ferramenta gratuita no AWS Management Console que ajuda a revisar o estado atual de suas workloads em comparação com as melhores práticas do Well-Architected Framework. Ela também ajuda a identificar áreas de melhoria e priorizar ações para otimizar sua arquitetura.
+
+### Quando Usar o AWS Well-Architected Framework:
+- **Revisão de Arquiteturas Existentes:** Para garantir que as arquiteturas atuais estão alinhadas com as melhores práticas da AWS.
+- **Planejamento de Novas Arquiteturas:** Ao projetar novos sistemas ou migrar sistemas existentes para a nuvem.
+- **Auditorias de Segurança e Conformidade:** Para garantir que os sistemas estejam em conformidade com padrões de segurança e regulamentações.
+
+O **AWS Well-Architected Framework** é essencial para garantir que seus sistemas na nuvem sejam bem projetados e otimizados, proporcionando uma base sólida para operações eficientes, seguras e econômicas na AWS.
+
+## AWS Systems Manager Session Manager
+<https://docs.aws.amazon.com/pt_br/systems-manager/latest/userguide/session-manager.html>
+
+O **AWS Systems Manager Session Manager** é uma ferramenta poderosa que faz parte do AWS Systems Manager, oferecendo uma forma segura, controlada e auditável de acessar e gerenciar instâncias EC2 e outros recursos da AWS sem a necessidade de abrir portas de rede, configurar bastion hosts ou usar chaves SSH/RDP.
+
+### Principais Características:
+
+- **Acesso Seguro:**
+  - Conecta-se às instâncias EC2 de forma segura, sem a necessidade de abrir portas SSH ou RDP, o que elimina riscos de segurança associados a essas práticas.
+  - Utiliza uma conexão segura e criptografada através do agente SSM já instalado nas instâncias gerenciadas.
+
+- **Controle de Acesso com IAM:**
+  - Permissões e acessos são gerenciados através do AWS Identity and Access Management (IAM), permitindo definir quais usuários ou roles podem iniciar sessões e em quais instâncias.
+  - Garante que apenas usuários autorizados possam acessar e gerenciar suas instâncias.
+
+- **Registro e Auditoria de Sessões:**
+  - Todas as atividades realizadas durante uma sessão podem ser registradas e enviadas para o AWS CloudWatch Logs ou armazenadas no Amazon S3.
+  - Facilita auditorias e a conformidade com políticas de segurança ao manter registros detalhados das ações dos usuários.
+
+- **Interface de Acesso:**
+  - Permite acesso via AWS Management Console, AWS Command Line Interface (CLI), ou AWS SDKs, proporcionando flexibilidade no gerenciamento das instâncias.
+  - Interface sem a necessidade de configurar e manter agentes SSH ou outros intermediários.
+
+### Quando Usar o Session Manager:
+
+- **Ambientes de Alta Segurança:**
+  - Ideal para cenários onde a segurança é crítica, eliminando a necessidade de expor portas de rede e utilizando autenticação e autorização centralizadas via IAM.
+  
+- **Administração de Instâncias em Ambientes Restritos:**
+  - Perfeito para ambientes onde a política de segurança exige acesso controlado e auditado, como em empresas que precisam de conformidade com regulamentações rigorosas.
+
+- **Eliminação de Bastion Hosts:**
+  - Remove a necessidade de configurar e manter bastion hosts, simplificando a arquitetura e reduzindo o custo e a complexidade.
+
+### Benefícios do Session Manager:
+
+- **Segurança Aprimorada:** Acessa instâncias sem abrir portas de rede públicas, reduzindo a superfície de ataque.
+- **Facilidade de Auditoria:** Registra todas as atividades realizadas durante as sessões, facilitando auditorias e investigações.
+- **Simplicidade e Eficiência:** Acesso direto via console, CLI ou SDKs sem a necessidade de gerenciar agentes ou infraestrutura adicional.
+
+### Como Funciona:
+
+1. **Configuração de Permissões IAM:** Defina políticas IAM para controlar o acesso ao Session Manager, especificando quais usuários ou roles têm permissão para iniciar sessões e em quais instâncias.
+2. **Início de Sessão:** Os usuários podem iniciar uma sessão diretamente através do AWS Management Console, CLI, ou SDKs.
+3. **Monitoramento e Registro:** As sessões podem ser configuradas para registrar todas as atividades, enviando logs para o CloudWatch Logs ou armazenando-os no S3 para análise posterior.
+
+O **AWS Systems Manager Session Manager** é uma solução robusta para administração remota, proporcionando uma abordagem segura, eficiente e centralizada para gerenciar suas instâncias EC2 e outros recursos AWS, tudo isso sem comprometer a segurança e a conformidade.
