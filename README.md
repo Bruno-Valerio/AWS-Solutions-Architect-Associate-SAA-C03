@@ -105,6 +105,7 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon FSx for Lustre](#amazon-fSx-for-lustre)
 - [Amazon Control Tower](#amazon-control-tower)
 - [Amazon FSx for Windows File Server](#amazon-fSx-for-windows-file-server)
+- [Amazon Quantum Ledger Database (Amazon QLDB)](#amazon-quantum-ledger-database-amazon-qldb)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -3485,3 +3486,30 @@ Amazon EMR é uma solução poderosa e flexível para processamento de big data 
 - **Amazon EC2**: Compatível com instâncias do Amazon EC2, permitindo que estas acessem o FSx for Windows File Server como se estivessem em uma rede local.
 
 O **Amazon FSx for Windows File Server** é uma solução poderosa para organizações que necessitam de um sistema de arquivos compartilhado e altamente disponível, compatível com Windows, na nuvem. Ele oferece todos os benefícios da nuvem AWS, incluindo escalabilidade, segurança e simplicidade de gerenciamento, sem comprometer a compatibilidade e o desempenho esperados em ambientes Windows.
+
+## Amazon Quantum Ledger Database (Amazon QLDB)  
+<https://docs.aws.amazon.com/pt_br/qldb/>
+
+O **Amazon Quantum Ledger Database (Amazon QLDB)** é um banco de dados de ledger totalmente gerenciado que fornece um log de transações transparente, imutável e criptograficamente verificável, pertencente a uma autoridade central confiável. Ele é projetado para casos de uso que exigem um histórico de transações completo e verificável, como sistemas de registro de propriedade, gerenciamento de cadeias de suprimentos, e conformidade regulatória.
+
+Aqui estão algumas informações curtas sobre o Amazon QLDB que você precisa saber para passar no exame AWS Certified Solutions Architect Associate:
+
+- **Imutabilidade**: O QLDB mantém um log imutável de transações, onde todas as alterações são registradas em ordem sequencial, garantindo que o histórico de dados seja preservado sem alterações.
+- **Verificação Criptográfica**: O QLDB permite verificar criptograficamente se as alterações nos dados não foram adulteradas ao longo do tempo, fornecendo uma prova de integridade.
+- **Totalmente Gerenciado**: O QLDB é um serviço totalmente gerenciado, o que significa que a AWS lida com todo o provisionamento, manutenção e dimensionamento da infraestrutura subjacente.
+- **Modelo de Dados Flexível**: O QLDB usa um modelo de dados baseado em documentos, permitindo flexibilidade na forma como os dados são estruturados e armazenados, suportando consultas complexas através de uma linguagem SQL compatível.
+
+Aqui estão alguns detalhes adicionais sobre o Amazon QLDB que você pode querer saber:
+
+- **Journal e Ledger**: O QLDB usa um *journal* que registra todas as transações em ordem sequencial. Esse journal é usado para construir um *ledger* criptograficamente verificável, fornecendo um histórico completo de todas as mudanças de dados.
+- **Consultas SQL**: O QLDB permite realizar consultas usando uma linguagem SQL, o que facilita a extração e análise de dados históricos e transações.
+- **Integração com IAM**: O QLDB é integrado ao AWS Identity and Access Management (IAM) para controle detalhado de permissões, permitindo que você defina quem pode acessar e modificar o ledger.
+- **Escalabilidade Automática**: O QLDB escala automaticamente para lidar com aumentos de carga de trabalho, sem a necessidade de intervenção manual ou reconfiguração.
+
+Exemplos de casos de uso do Amazon QLDB:
+
+- **Sistemas de Registro de Propriedade**: O QLDB é ideal para manter um registro histórico imutável de transações de propriedade, como vendas de imóveis, transferências de ativos, ou qualquer outro sistema onde a integridade dos registros seja crítica.
+- **Gerenciamento de Cadeias de Suprimentos**: Use o QLDB para rastrear a origem e a movimentação de produtos através de uma cadeia de suprimentos, garantindo que todas as transações sejam transparentes e verificáveis.
+- **Conformidade Regulatória**: Empresas que precisam manter registros detalhados e imutáveis para fins de auditoria e conformidade podem usar o QLDB para garantir que todos os registros sejam completos e verificáveis ao longo do tempo.
+
+O Amazon QLDB é uma solução poderosa para casos de uso onde a integridade dos dados e a transparência das transações são fundamentais. Com seu ledger imutável e verificável, o QLDB facilita a criação de aplicativos que exigem um histórico de dados confiável e resistente à manipulação.
