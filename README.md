@@ -94,7 +94,7 @@ As informações estão organizadas nas seguintes seções:
 - [Modos de Recuperação de Desastres na AWS](#modos-de-recuperação-de-desastres-na-aws)
 - [AWS Artifact](#aws-artifact)
 - [Amazon Timestream](#amazon-timestream)
-- [AWS Database Migration Service (DMS)  ](#aws-database-migration-service-dms)
+- [AWS Database Migration Service (DMS)](#aws-database-migration-service-dms)
 - [AWS Migration Hub ](#aws-migration-hub)
 - [AWS Organizations](#aws-organizations)
 - [AWS PrivateLink](#aws-privatelink)
