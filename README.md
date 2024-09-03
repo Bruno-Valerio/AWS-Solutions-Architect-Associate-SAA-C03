@@ -14,7 +14,7 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon Elastic Kubernetes Service (EKS)](#amazon-elastic-kubernetes-service-eks)
 - [AWS Lambda](#aws-lambda)
 - [Amazon Virtual Private Cloud (VPC)](#amazon-virtual-private-cloud-vpc)
-- [Amazon Route 53](#amazon-route-53) - ok
+- [Amazon Route 53](#amazon-route-53)
 - [AWS Certificate Manager (ACM)](#aws-certificate-manager-acm)
 - [Amazon Elastic Load Balancing (ELB)](#amazon-elastic-load-balancing-elb)
 - [Gateway Load Balancer (GWLB)](#gateway-load-balancer-gwlb)
@@ -30,14 +30,14 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon Redshift](#amazon-redshift)
 - [Amazon Simple Queue Service (SQS)](#amazon-simple-queue-service-sqs)
 - [Amazon Simple Notification Service (SNS)](#amazon-simple-notification-service-sns)
-- [Amazon API Gateway](#amazon-api-gateway) - ok
+- [Amazon API Gateway](#amazon-api-gateway)
 - [Amazon Cognito](#amazon-cognito)
 - [Amazon CloudWatch](#amazon-cloudwatch)
 - [AWS CloudTrail](#aws-cloudtrail)
 - [AWS Identity and Access Management (IAM)](#aws-identity-and-access-management-iam)
 - [AWS Key Management Service (KMS)](#aws-key-management-service-kms)
 - [AWS Security Hub](#aws-security-hub)
-- [AWS CloudFormation](#aws-cloudformation) - ok
+- [AWS CloudFormation](#aws-cloudformation)
 - [AWS Systems Manager](#aws-systems-manager)
 - [AWS Secrets Manager](#aws-secrets-manager)
 - [AWS Well-Architected Framework](#aws-well-architected-framework)
@@ -51,7 +51,7 @@ As informações estão organizadas nas seguintes seções:
 - [AWS Step Functions](#aws-step-functions)
 - [Amazon Kinesis](#amazon-kinesis)
 - [Amazon GuardDuty](#amazon-guardduty)
-- [Amazon Inspector](#amazon-inspector) - ok
+- [Amazon Inspector](#amazon-inspector)
 - [Amazon Macie](#amazon-macie)
 - [AWS IAM Access Analyzer](#aws-iam-access-analyzer)
 - [AWS CodePipeline](#aws-codepipeline)
@@ -71,14 +71,14 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon OpenSearch Service](#amazon-opensearch-service)
 - [Amazon Elasticsearch Service (AES)](#amazon-elasticsearch-service-aes)
 - [AWS Glue](#aws-glue)
-- [AWS WAF](#aws-waf) - ok
+- [AWS WAF](#aws-waf) 
 - [Amazon MQ](#amazon-mq)
 - [AWS Network Interfaces](#aws-network-interfaces)
 - [Placement Groups](#placement-groups)
 - [AWS Outposts](#aws-outposts)
 - [AWS Well-Architected Framework](#aws-well-architected-framework)
 - [AWS Systems Manager Session Manager](#aws-systems-manager-session-manager)
-- [AWS DataSync](#aws-datasync) - ok
+- [AWS DataSync](#aws-datasync)
 - [AWS Site-to-Site VPN](#aws-site-to-site-vpn)
 - [AWS Transit Gateway](#aws-transit-gateway)
 - [NAT Gateway](#nat-gateway)
@@ -94,8 +94,8 @@ As informações estão organizadas nas seguintes seções:
 - [Modos de Recuperação de Desastres na AWS](#modos-de-recuperação-de-desastres-na-aws)
 - [AWS Artifact](#aws-artifact)
 - [Amazon Timestream](#amazon-timestream)
-- [AWS Database Migration Service (DMS)  ](#aws-database-migration-service-dms) - ok
-- [AWS Migration Hub ](#aws-migration-hub) - ok
+- [AWS Database Migration Service (DMS)  ](#aws-database-migration-service-dms)
+- [AWS Migration Hub ](#aws-migration-hub)
 - [AWS Organizations](#aws-organizations)
 - [AWS PrivateLink](#aws-privatelink)
 - [Amazon EMR](#amazon-EMR)
