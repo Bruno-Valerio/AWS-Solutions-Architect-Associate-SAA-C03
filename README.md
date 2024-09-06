@@ -95,7 +95,7 @@ As informações estão organizadas nas seguintes seções:
 - [AWS Artifact](#aws-artifact)
 - [Amazon Timestream](#amazon-timestream)
 - [AWS Database Migration Service (DMS)](#aws-database-migration-service-dms)
-- [AWS Migration Hub ](#aws-migration-hub)
+- [AWS Migration Hub](#aws-migration-hub)
 - [AWS Organizations](#aws-organizations)
 - [AWS PrivateLink](#aws-privatelink)
 - [Amazon EMR](#amazon-EMR)
@@ -106,6 +106,10 @@ As informações estão organizadas nas seguintes seções:
 - [Amazon Control Tower](#amazon-control-tower)
 - [Amazon FSx for Windows File Server](#amazon-fSx-for-windows-file-server)
 - [Amazon Quantum Ledger Database (Amazon QLDB)](#amazon-quantum-ledger-database-amazon-qldb)
+- [AWS Pricing Calculator](#aws-pricing-calculator)
+- [AWS Savings Plans](#aws-savings-plans)
+- [Quando usar cada tipo de instância na AWS](#quando-usar-cada-tipo-de-instância-na-aws)
+- [AWS Amplify](#aws-amplify)
 
 ## Amazon Elastic Compute Cloud (EC2)
 <https://docs.aws.amazon.com/pt_br/ec2/>
@@ -2838,11 +2842,6 @@ O **AWS IoT Core** é o serviço principal dentro da suite IoT da AWS. Ele permi
 - **Modelos Predefinidos**: Utilização de modelos de dados predefinidos para representar ativos industriais comuns, acelerando o desenvolvimento e a implementação.
 - **Escalabilidade**: Projetado para escalar automaticamente conforme o volume de dados aumenta, garantindo desempenho consistente.
 
-## AWS Savings Plans
-<https://aws.amazon.com/pt/savingsplans/>
-
-**AWS Savings Plans** é um modelo de preços flexível oferecido pela AWS que ajuda a reduzir custos com uso de computação em troca de um compromisso com um valor de uso específico em dólares por hora durante um período de 1 ou 3 anos. Esses planos oferecem uma alternativa econômica às instâncias sob demanda, permitindo economias significativas para workloads previsíveis e estáveis.
-
 #### Como Funciona o AWS Savings Plans?
 
 **Compromisso com o Uso por Hora**:
@@ -3513,3 +3512,135 @@ Exemplos de casos de uso do Amazon QLDB:
 - **Conformidade Regulatória**: Empresas que precisam manter registros detalhados e imutáveis para fins de auditoria e conformidade podem usar o QLDB para garantir que todos os registros sejam completos e verificáveis ao longo do tempo.
 
 O Amazon QLDB é uma solução poderosa para casos de uso onde a integridade dos dados e a transparência das transações são fundamentais. Com seu ledger imutável e verificável, o QLDB facilita a criação de aplicativos que exigem um histórico de dados confiável e resistente à manipulação.
+
+## AWS Pricing Calculator  
+<https://calculator.aws/#/>
+
+O **AWS Pricing Calculator** é uma ferramenta que permite aos usuários estimar os custos de usar vários serviços da AWS. A ferramenta ajuda a simular diferentes cenários de uso e prever os custos com base nas suas necessidades de infraestrutura, como capacidade de computação, armazenamento e transferência de dados.
+
+Aqui estão algumas informações curtas sobre o AWS Pricing Calculator que você precisa saber para passar no exame **AWS Certified Solutions Architect Associate**:
+
+- O AWS Pricing Calculator ajuda a **estimar os custos** para diversos serviços da AWS.
+- Ele permite que você personalize sua simulação com base em **regiões**, **tipos de instâncias**, **volume de armazenamento**, **tráfego de rede**, entre outros parâmetros.
+- A ferramenta oferece estimativas detalhadas de custos **mensais** e **anuais**, com base nos recursos especificados.
+- O AWS Pricing Calculator facilita a análise de **opções de otimização de custos**, como instâncias reservadas, Savings Plans, e instâncias spot.
+
+### Características principais:
+- **Customização de cenários**: Você pode simular diferentes cargas de trabalho ajustando o uso dos serviços da AWS, como Amazon EC2, S3, e RDS.
+- **Comparação de planos de economia**: A ferramenta permite comparar os custos entre instâncias sob demanda, reservadas e Savings Plans.
+- **Estimativas detalhadas**: Gera relatórios detalhados que facilitam a visualização dos custos para cada componente usado no cálculo.
+- **Facilidade de uso**: O AWS Pricing Calculator oferece uma interface intuitiva, onde você pode adicionar serviços e ajustar parâmetros com facilidade.
+
+### Detalhes adicionais sobre o AWS Pricing Calculator:
+- **Acessível via navegador**: Não requer download ou instalação. A ferramenta está disponível diretamente no site da AWS.
+- **Atualizações frequentes**: O AWS Pricing Calculator é atualizado regularmente para refletir novas regiões, tipos de instâncias e serviços da AWS.
+- **Estimativas conservadoras**: A ferramenta oferece uma visão conservadora dos custos, ajudando a evitar surpresas em relação aos gastos reais.
+- **Integração com AWS Cost Explorer**: Após a implementação dos serviços, o AWS Cost Explorer pode ser usado para monitorar os custos em tempo real e ajustar as estimativas feitas anteriormente.
+
+### Exemplos de casos de uso:
+- **Planejamento de migração para a nuvem**: Use o AWS Pricing Calculator para prever os custos de migrar cargas de trabalho on-premises para a AWS.
+- **Otimização de arquitetura**: Teste diferentes combinações de serviços e regiões para otimizar o custo da sua arquitetura na nuvem.
+- **Previsão de custos para novos projetos**: Simule cenários de uso para prever quanto um novo projeto custará mensalmente antes de implementá-lo na AWS.
+
+O **AWS Pricing Calculator** é uma ferramenta essencial para planejar e otimizar os custos ao usar a AWS, garantindo previsibilidade e controle sobre o orçamento de TI.
+
+## AWS Savings Plans  
+<https://aws.amazon.com/savingsplans/>
+
+O **AWS Savings Plans** é um modelo flexível de preços que oferece descontos significativos em troca de um compromisso de uso consistente de serviços da AWS por 1 ou 3 anos. O Savings Plans permite economizar nos serviços de computação da AWS, como EC2, Fargate e Lambda, proporcionando uma forma econômica de executar suas cargas de trabalho com descontos de até 72% em comparação com preços sob demanda.
+
+### Principais características dos **AWS Savings Plans**:
+- **Descontos significativos**: Oferece até **72% de desconto** em comparação com os preços de instâncias sob demanda.
+- **Flexibilidade**: Diferente das **Reserved Instances**, o Savings Plans aplica-se a uma variedade de serviços e tipos de instâncias, ajustando-se automaticamente conforme seu uso muda ao longo do tempo.
+- **Compromisso de longo prazo**: Funciona com base em um **compromisso de uso por hora** (USD/hora) por um período de **1 ou 3 anos**.
+
+### Tipos de AWS Savings Plans:
+1. **Compute Savings Plans**:
+   - **Abrangência**: Aplica-se a qualquer instância EC2, independentemente da **região**, **família de instância**, **sistema operacional**, ou **modelo de locação** (sob demanda, spot, ou dedicadas).
+   - **Flexibilidade**: Ideal para quem precisa de máxima flexibilidade, pois permite mover workloads entre regiões e diferentes tipos de instâncias.
+   - **Desconto**: Oferece os maiores descontos em relação aos preços sob demanda.
+
+2. **EC2 Instance Savings Plans**:
+   - **Específico para instâncias EC2**: Aplica-se a uma **família de instâncias** específica em uma **região**. Oferece menos flexibilidade que o Compute Savings Plans, mas ainda permite trocar o tamanho da instância dentro da mesma família.
+   - **Desconto mais alto**: Por ser mais restrito, oferece **descontos ainda maiores** em comparação com o Compute Savings Plans.
+
+### Benefícios adicionais:
+- **Sem necessidade de pré-pagamento**: Embora ofereça opções de pagamento antecipado total ou parcial, você pode escolher um plano **sem pagamento antecipado**, pagando apenas o valor correspondente ao uso comprometido mensalmente.
+- **Aplicação automática de descontos**: O plano detecta automaticamente quando o uso corresponde ao compromisso de economia, aplicando os descontos sem que você precise ajustar a configuração manualmente.
+- **Compatibilidade com AWS Cost Explorer**: Integra-se ao **AWS Cost Explorer** para que você acompanhe facilmente o progresso do uso e identifique oportunidades adicionais de economia.
+
+### Casos de uso:
+- **Workloads previsíveis**: Savings Plans são ideais para cargas de trabalho que apresentam um uso consistente de recursos ao longo do tempo, como servidores de produção e aplicativos corporativos.
+- **Aplicações dinâmicas**: Mesmo para workloads que variam entre tipos de instância e regiões, os Compute Savings Plans fornecem flexibilidade para maximizar a economia.
+- **Migração de aplicações**: Caso você esteja migrando workloads entre regiões ou ajustando seu ambiente para diferentes tipos de instância, o Compute Savings Plans ainda oferece economia significativa.
+
+### Comparação com **Reserved Instances**:
+- **Maior flexibilidade**: O Savings Plans é mais flexível que as **Reserved Instances**, já que pode ser aplicado a diferentes tipos de instância e regiões, enquanto as RI são limitadas à instância e região especificadas.
+- **Gestão simplificada**: O Savings Plans reduz a necessidade de gerenciar reservas específicas, adaptando-se automaticamente ao uso do seu ambiente.
+
+O **AWS Savings Plans** é uma excelente escolha para quem busca otimizar os custos de longo prazo na AWS, garantindo a flexibilidade de escolher diferentes serviços e instâncias sem sacrificar economia.
+
+## Quando usar cada tipo de instância na AWS
+
+A AWS oferece diferentes tipos de instâncias para atender a várias necessidades de uso, proporcionando flexibilidade em desempenho, capacidade e custo. A escolha correta da instância pode otimizar a performance e reduzir os custos. A seguir, um resumo dos principais tipos de instâncias e quando utilizá-las:
+
+### 1. **Instâncias Sob Demanda (On-Demand Instances)**
+- **Quando usar**: Ideal para aplicações com cargas de trabalho **imprevisíveis** ou **temporárias**. Use quando você precisar de **flexibilidade** e não quiser compromissos de longo prazo. 
+- **Exemplos**: Testes, desenvolvimento, picos inesperados de tráfego.
+
+### 2. **Instâncias Reservadas (Reserved Instances)**
+- **Quando usar**: Melhor para **cargas de trabalho estáveis** e de longo prazo, onde você pode se comprometer com 1 ou 3 anos. Oferece **descontos significativos** em relação às instâncias sob demanda.
+- **Exemplos**: Aplicações críticas ou estáveis, servidores de produção com uso constante.
+
+### 3. **Instâncias Spot (Spot Instances)**
+- **Quando usar**: Ótima escolha para aplicações **tolerantes a falhas** e cargas de trabalho **interrompíveis**, como processamento de grandes volumes de dados e análises. As Spot Instances oferecem até **90% de desconto**, mas podem ser interrompidas pela AWS quando a capacidade é necessária.
+- **Exemplos**: Processamento batch, renderização de vídeos, workloads de machine learning.
+
+### 4. **Dedicated Hosts**
+- **Quando usar**: Necessário para ambientes que exigem **isolamento físico** de hardware por **motivos de conformidade** ou licenciamento de software específico que exige uma máquina física dedicada.
+- **Exemplos**: Aplicações empresariais que requerem licenças específicas (por exemplo, Oracle ou Windows Server), ou conformidade regulatória.
+
+### 5. **Instâncias Dedicadas (Dedicated Instances)**
+- **Quando usar**: Semelhante aos Dedicated Hosts, as Dedicated Instances são necessárias quando você precisa de isolamento físico do hardware por razões de **segurança** ou **compliance**, mas sem o controle total do hardware como no caso dos Dedicated Hosts.
+- **Exemplos**: Ambientes onde o compartilhamento de hardware não é aceitável por regulamentações.
+
+### 6. **Savings Plans**
+- **Quando usar**: Ideal se você deseja comprometer-se a um nível de gasto (em dólares por hora) por 1 ou 3 anos. Funciona com **EC2**, **Fargate**, e **Lambda**, proporcionando **flexibilidade** com descontos semelhantes às instâncias reservadas.
+- **Exemplos**: Workloads dinâmicas que podem mudar de região, tipo de instância, ou de serviço (EC2, Fargate).
+
+### Resumo das escolhas:
+- **Imprevisível ou intermitente?** Use instâncias sob demanda.
+- **Compromisso de longo prazo com uso constante?** Use instâncias reservadas.
+- **Aplicações tolerantes a interrupções?** Use instâncias Spot.
+- **Conformidade e isolamento físico necessário?** Use Dedicated Hosts ou Instâncias Dedicadas.
+- **Economia com flexibilidade?** Use Savings Plans.
+
+## AWS Amplify  
+<https://aws.amazon.com/amplify/>
+
+O **AWS Amplify** é um conjunto de ferramentas e serviços que ajudam desenvolvedores front-end a criar, lançar e hospedar rapidamente aplicações web e móveis completas e escaláveis. Ele facilita a integração com uma variedade de serviços da AWS, como **Cognito**, **API Gateway**, **Lambda**, e **S3**, tornando o desenvolvimento mais ágil e eficiente.
+
+### Principais características do **AWS Amplify**:
+- **Desenvolvimento Rápido**: Amplify permite criar e configurar rapidamente backend escalável e seguro para aplicações web e móveis, gerando APIs, armazenamento e autenticação de forma automatizada.
+- **Integração Simples**: Fácil integração com diversos serviços da AWS, como bancos de dados, autenticação de usuários e APIs REST ou GraphQL.
+- **Hospedagem e CI/CD**: O Amplify fornece hospedagem integrada com pipelines de CI/CD, permitindo implantações automáticas para aplicações front-end e backend.
+- **Autenticação de Usuários**: Integração nativa com o **Amazon Cognito** para autenticação de usuários, gerenciamento de perfis e controle de acesso.
+- **APIs e Funções Lambda**: Criação e gerenciamento simplificados de APIs (REST e GraphQL) e funções serverless com AWS Lambda.
+- **Armazenamento de Dados**: Oferece suporte para armazenar e recuperar arquivos, imagens e documentos no **Amazon S3**, além de integrar bancos de dados como **Amazon DynamoDB**.
+
+### Quando usar o AWS Amplify:
+- **Desenvolvimento Front-end Rápido**: Ideal para desenvolvedores front-end que desejam criar aplicativos com backend escalável, sem a necessidade de gerenciar a infraestrutura subjacente.
+- **Aplicações Web e Mobile**: Indicado para construção de aplicações web e móveis de maneira simplificada e com integração pronta para uso com serviços da AWS.
+- **Implementação Automática**: Amplify é ideal para equipes que desejam um pipeline de CI/CD automatizado para implantar rapidamente atualizações de front-end e backend.
+
+### Detalhes adicionais sobre o **AWS Amplify**:
+- **Interface Amigável**: Ferramentas visuais e linha de comando (CLI) que facilitam a configuração do backend e a integração com serviços da AWS.
+- **CI/CD para Front-end**: Automatiza todo o ciclo de desenvolvimento, desde a criação até a implantação contínua de aplicativos, com suporte a várias frameworks JavaScript.
+- **Escalabilidade Automática**: O Amplify dimensiona automaticamente os recursos conforme necessário, com base na demanda da aplicação.
+
+### Exemplos de Casos de Uso:
+- **Aplicações Web ou Móveis**: Criação rápida de aplicativos com autenticação de usuários, APIs, armazenamento de arquivos e análise.
+- **Prototipagem Rápida**: Ideal para startups e equipes que desejam desenvolver MVPs (Minimum Viable Product) com integração completa entre front-end e backend.
+- **Hospedagem de Sites e Aplicações Estáticas**: Solução integrada para hospedagem de sites estáticos com integração de backends serverless.
+
+O **AWS Amplify** é uma solução poderosa e completa para desenvolvedores que desejam construir, lançar e escalar aplicativos web e móveis de forma rápida e com integração perfeita com os serviços da AWS.
